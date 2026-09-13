@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>Week 2 Slides</title>
+          <link rel="stylesheet" href="../../../assets/css/slides.css">
+          <script src="../../../assets/js/slides.js" defer></script>
+        </head>
+        <body>
+          <main class="deck-shell" aria-label="Week 2 Slides">
+            <div>
+
+    <section class="slide"><p class="kicker">Week 2 - CS 0135</p><h1>HTML Foundations</h1><p>Build a semantic personal profile page that becomes the base for the semester project.</p></section>
+
+
+    <section class="slide"><h2>Learning Outcomes</h2><ul><li>Write a valid HTML document structure.</li><li>Use headings, paragraphs, emphasis, lists, links, images, tables, and forms correctly.</li><li>Choose semantic elements for page regions.</li><li>Validate HTML and fix common nesting errors.</li></ul></section>
+
+    <section class="slide"><h2>Prior-Knowledge Check</h2><ol><li>Which visible heading should usually describe the whole page?</li><li>What file name does a web server commonly open first?</li><li>What is one reason a browser may show a broken image icon?</li></ol><details class="callout"><summary>Reveal sample answers</summary><p><code>h1</code>, <code>index.html</code>, and a missing or incorrect image path.</p></details></section>
+
+
+    <section class="slide"><h2>HTML Document Structure</h2><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Personal Profile&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></section>
+
+    <section class="slide"><h2>Code Walkthrough</h2><ul><li><code>lang="en"</code> identifies the page language.</li><li><code>charset="UTF-8"</code> supports common characters.</li><li><code>viewport</code> helps responsive layout on phones.</li><li><code>title</code> labels the browser tab.</li></ul></section>
+
+
+    <section class="slide"><h2>Headings and Paragraphs</h2><pre><code>&lt;h1&gt;Aisha Ahmed&lt;/h1&gt;
+&lt;p&gt;First-semester cybersecurity student learning web design.&lt;/p&gt;
+&lt;h2&gt;Learning Goals&lt;/h2&gt;
+&lt;p&gt;I want to build clear, secure, and accessible websites.&lt;/p&gt;</code></pre></section>
+
+
+    <section class="slide"><h2>Strong and Emphasis</h2><div class="two-col"><div><pre><code>&lt;p&gt;Submit the project &lt;strong&gt;before Week 13&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Use &lt;em&gt;clear&lt;/em&gt; link text.&lt;/p&gt;</code></pre></div><ul><li><code>strong</code> marks importance.</li><li><code>em</code> marks stress emphasis.</li><li>They are not just bold and italic.</li></ul></div></section>
+
+
+    <section class="slide"><h2>Lists</h2><div class="two-col"><pre><code>&lt;h2&gt;Skills&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;HTML structure&lt;/li&gt;
+  &lt;li&gt;Browser DevTools&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+  &lt;li&gt;Plan content&lt;/li&gt;
+  &lt;li&gt;Write HTML&lt;/li&gt;
+  &lt;li&gt;Validate&lt;/li&gt;
+&lt;/ol&gt;</code></pre><div class="browser-preview"><div class="browser-bar"></div><h3>Use lists for related items</h3><p>Choose ordered lists only when sequence matters.</p></div></div></section>
+
+    <section class="slide"><h2>Predict the Output</h2><pre><code>&lt;ol&gt;
+  &lt;li&gt;Plan content&lt;/li&gt;
+  &lt;li&gt;Write HTML&lt;/li&gt;
+  &lt;li&gt;Validate&lt;/li&gt;
+&lt;/ol&gt;</code></pre><details class="callout"><summary>Reveal answer</summary><p>The browser displays a numbered list with three steps in order.</p></details></section>
+
+
+    <section class="slide"><h2>Links and Useful Link Text</h2><pre><code>&lt;a href="https://developer.mozilla.org/"&gt;Read MDN Web Docs&lt;/a&gt;
+&lt;a href="projects.html"&gt;View my projects&lt;/a&gt;</code></pre><p class="callout">Avoid link text like "click here." The text should explain the destination.</p></section>
+
+
+    <section class="slide"><h2>Images and Alternative Text</h2><pre><code>&lt;img src="images/profile-workspace.svg"
+     alt="Desk with a laptop, notebook, and web design sketches"&gt;</code></pre><ul><li><code>src</code> points to the file.</li><li><code>alt</code> communicates the image purpose.</li><li>Decorative images may use empty alt text: <code>alt=""</code>.</li></ul></section>
+
+
+    <section class="slide"><h2>File Paths</h2><pre><code>profile-site/
+|-- index.html
+|-- projects.html
+`-- images/
+    `-- profile-workspace.svg</code></pre><p><code>images/profile-workspace.svg</code> means: start beside <code>index.html</code>, open the <code>images</code> folder, then load the image.</p></section>
+
+
+    <section class="slide"><h2>Semantic Page Structure</h2><pre><code>&lt;header&gt;...&lt;/header&gt;
+&lt;nav&gt;...&lt;/nav&gt;
+&lt;main&gt;
+  &lt;section&gt;...&lt;/section&gt;
+  &lt;article&gt;...&lt;/article&gt;
+&lt;/main&gt;
+&lt;footer&gt;...&lt;/footer&gt;</code></pre></section>
+
+
+    <section class="slide"><h2>Tables Are for Tabular Data</h2><pre><code>&lt;table&gt;
+  &lt;caption&gt;Weekly Study Plan&lt;/caption&gt;
+  &lt;tr&gt;&lt;th&gt;Day&lt;/th&gt;&lt;th&gt;Task&lt;/th&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;Monday&lt;/td&gt;&lt;td&gt;Read HTML notes&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre><p>Do not use tables only to arrange page layout.</p></section>
+
+
+    <section class="slide"><h2>Introductory Forms</h2><pre><code>&lt;form&gt;
+  &lt;label for="message"&gt;Message&lt;/label&gt;
+  &lt;textarea id="message" name="message"&gt;&lt;/textarea&gt;
+
+  &lt;label for="email"&gt;Email&lt;/label&gt;
+  &lt;input id="email" name="email" type="email"&gt;
+
+  &lt;button type="submit"&gt;Send&lt;/button&gt;
+&lt;/form&gt;</code></pre></section>
+
+
+    <section class="slide"><h2>HTML Comments</h2><pre><code>&lt;!-- Main profile content starts here --&gt;</code></pre><p>Use comments to clarify structure during learning. Do not use comments to hide private information.</p></section>
+
+
+    <section class="slide"><h2>HTML vs XHTML Context</h2><ul><li>XHTML used XML-style strict syntax.</li><li>Modern courses should teach HTML as the main standard.</li><li>Writing lowercase tags, quoted attributes, and well-nested elements is still a good habit.</li></ul></section>
+
+
+    <section class="slide"><h2>Find the Error</h2><pre><code>&lt;ul&gt;
+  &lt;li&gt;HTML
+  &lt;li&gt;CSS&lt;/li&gt;
+&lt;/ol&gt;</code></pre><p class="callout">Find three problems before the answer is shown.</p><details class="callout"><summary>Reveal answer</summary><p>Close the first <code>li</code>, keep list tags consistent, and close the unordered list with <code>&lt;/ul&gt;</code>.</p></details></section>
+
+
+    <section class="slide"><h2>Live-Coding Checkpoint</h2><ol><li>Create semantic regions.</li><li>Add profile introduction and goals.</li><li>Add a projects list and study table.</li><li>Add a contact form with labels.</li><li>Validate the page.</li></ol></section>
+
+
+    <section class="slide"><h2>Your Turn</h2><p>Build your profile page using the starter folder.</p><ul><li>Replace placeholder text with your own content.</li><li>Add one internal link and one external link.</li><li>Write useful alt text for the provided image.</li><li>Fix validation errors before submission.</li></ul></section>
+
+
+    <section class="slide"><h2>Knowledge Check</h2><ol><li>What is the purpose of <code>&lt;main&gt;</code>?</li><li>When should you use a table?</li><li>Why should an input have a label?</li><li>What does the HTML validator help you find?</li></ol></section>
+
+    <section class="slide"><h2>Common Mistakes</h2><ul><li>Using headings only to make text look large.</li><li>Writing vague alt text such as "image" or "picture."</li><li>Using tables for page layout instead of data.</li><li>Forgetting that <code>id</code> values and fragment links must match.</li></ul></section>
+
+
+    <section class="slide"><h2>Recap and Exit Ticket</h2><ul><li>HTML describes structure and meaning.</li><li>Semantic elements make pages clearer for humans and tools.</li><li>Validation catches mistakes early.</li></ul><p class="callout">Exit ticket: paste one fixed validation error and explain the fix.</p></section>
+
+            </div>
+            <div class="controls" aria-label="Slide controls">
+              <a class="home-link" href="../../../index.html">Course Home</a>
+              <div>Week 2 - <span data-current-slide>1</span>/<span data-total-slides></span></div>
+              <div>
+                <button type="button" data-prev aria-label="Previous slide">Prev</button>
+                <button type="button" data-next aria-label="Next slide">Next</button>
+                
+              </div>
+            </div>
+          </main>
+        </body>
+        </html>

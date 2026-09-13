@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CS 0135 Web Programming and Design</title>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/js/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to course content</a>
+  <header class="site-header">
+    <div class="topbar">
+      <div class="brand">CS 0135</div>
+    </div>
+    <div class="hero">
+      <div>
+        <p class="eyebrow"><span data-course-code>CS 0135</span> - <span data-semester>Fall 2026</span></p>
+        <h1 data-course-title>Web Programming and Design</h1>
+        <p class="hero-copy">A beginner-friendly, practice-first course for first-semester students learning how the web works and how to build accessible, responsive websites with HTML, CSS, JavaScript, and introductory server-side technologies.</p>
+        <div class="hero-meta" aria-label="Course facts">
+          <div><span>Instructor</span><strong data-instructor>Dr. Fahad Alzahrani</strong></div>
+          <div><span>Sections</span><strong data-sections>120 and 121</strong></div>
+          <div><span>Contact hours</span><strong data-contact>42 contact hours</strong></div>
+          <div><span>Teaching environment</span><strong data-environment>VS Code, browser, Live Server</strong></div>
+        </div>
+        <div class="button-row">
+          <a class="button primary" href="weeks/week01/slides/index.html">Open Week 1 Slides</a>
+          <a class="button" href="weeks/week02/slides/index.html">Open Week 2 Slides</a>
+          <a class="button" href="project/brief.html">Course Project</a>
+        </div>
+      </div>
+      <aside class="progress-panel" aria-labelledby="progress-title">
+        <h2 id="progress-title">Semester Progress</h2>
+        <p data-progress-text>Loading weekly modules</p>
+        <div class="progress-meter" aria-hidden="true"><span data-progress-bar></span></div>
+        <div class="progress-scroll" tabindex="0" aria-label="All 14 weekly modules">
+          <ol class="week-mini-list" data-week-mini-list></ol>
+        </div>
+        <p id="load-error" data-load-error hidden></p>
+      </aside>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="curriculum">
+      <div class="section-inner">
+        <div class="section-heading">
+          <h2>Semester Schedule</h2>
+          <p class="lede">The map preserves the official 14 topics and modernizes obsolete practice where needed.</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th class="col-week">Week</th>
+                <th class="col-session">Session</th>
+                <th>What Students Learn</th>
+                <th class="col-duration">Duration</th>
+                <th class="col-resource">Slides</th>
+                <th class="col-resource">Activity</th>
+                <th class="col-resource">Lab</th>
+                <th class="col-project">Project</th>
+              </tr>
+            </thead>
+            <tbody data-curriculum></tbody>
+          </table>
+        </div>
+        <div class="schedule-cards" data-schedule-cards aria-label="Mobile semester schedule"></div>
+      </div>
+    </section>
+
+    <section id="weeks" class="band">
+      <div class="section-inner">
+        <div class="section-heading">
+          <h2>Ready Materials</h2>
+          <p class="lede">Week 1 and Week 2 include slides, labs, activities, starter code, and solution code.</p>
+        </div>
+        <div class="info-grid">
+          <article class="tile"><h3>Week 1</h3><p>Introduction to the Web, tooling, first website, DevTools, and debugging.</p><a href="weeks/week01/lab/index.html">Open lab</a></article>
+          <article class="tile"><h3>Week 2</h3><p>HTML structure, semantic content, links, images, tables, forms, validation, and XHTML context.</p><a href="weeks/week02/lab/index.html">Open lab</a></article>
+          <article class="tile"><h3>Starter Files</h3><p>Student starter folders are included inside each ready week.</p><a href="weeks/week01/lab/starter/index.html">Open Week 1 starter</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="outcomes">
+      <div class="section-inner">
+        <div class="section-heading">
+          <h2>Learning Outcomes</h2>
+          <p class="lede">Condensed from the official course specification and expressed in student-facing language.</p>
+        </div>
+        <div class="outcome-grid" data-outcomes></div>
+      </div>
+    </section>
+
+    <section id="assessment" class="band">
+      <div class="section-inner">
+        <div class="section-heading">
+          <h2>Assessments</h2>
+          <p class="lede">Timing and weights follow the official specification.</p>
+        </div>
+        <div class="assessment-grid" data-assessments></div>
+      </div>
+    </section>
+
+    <section id="project">
+      <div class="section-inner">
+        <div class="section-heading">
+          <h2>Course Project</h2>
+          <p class="lede">A beginner-level multi-page website developed through checkpoints instead of one final rush.</p>
+        </div>
+        <div class="project-grid">
+          <article class="tile"><h3>Brief</h3><p>Scope, originality expectations, deliverables, and submission format.</p><a href="project/brief.html">Read brief</a></article>
+          <article class="tile"><h3>Milestones</h3><p>Week-by-week checkpoints aligned with class skills.</p><a href="project/milestones.html">View milestones</a></article>
+          <article class="tile"><h3>Rubric</h3><p>10-mark rubric with beginner-friendly quality criteria.</p><a href="project/rubric.html">View rubric</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="setup" class="band">
+      <div class="section-inner">
+        <div class="section-heading">
+          <h2>Software Setup</h2>
+          <p class="lede">Students use the same tools in lecture, lab, and project work.</p>
+        </div>
+        <div class="info-grid">
+          <article class="tile"><h3>Editor</h3><p>Visual Studio Code with Live Server, Prettier, and HTML/CSS support.</p></article>
+          <article class="tile"><h3>Browser</h3><p>Chrome, Edge, Firefox, or Safari with Developer Tools.</p></article>
+          <article class="tile"><h3>Workflow</h3><p>Create a project folder, open it in VS Code, run with Live Server, inspect and debug in the browser.</p></article>
+          <article class="tile"><h3>Reference Materials</h3><p>MDN, WHATWG HTML, PHP documentation, OWASP, and Microsoft Learn are used for modern technical verification.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <p class="back-top"><a href="#">Back to top</a></p>
+
+  <footer class="footer">
+    <div class="section-inner">
+      <span>CS 0135 - Web Programming and Design - Fall 2026</span>
+      <span>Prepared for Imam Muhammad Ibn Saud Islamic University</span>
+    </div>
+  </footer>
+</body>
+</html>

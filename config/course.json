@@ -1,0 +1,232 @@
+{
+  "title": "Web Programming and Design",
+  "code": "CS 0135",
+  "institution": "Imam Muhammad Ibn Saud Islamic University",
+  "program": "Diploma-level Computer Science / Cybersecurity",
+  "semester": "Fall 2026",
+  "instructor": "Dr. Fahad Alzahrani",
+  "sections": [
+    "120",
+    "121"
+  ],
+  "creditHours": "3 credit hours: 2 theory, 2 lab",
+  "contactHours": "42 contact hours: 28 lecture, 14 lab",
+  "prerequisites": "None",
+  "environment": "VS Code, browser, and Live Server",
+  "colors": {
+    "ink": "#101820",
+    "accent": "#007c6c",
+    "gold": "#b78b20",
+    "paper": "#fbfaf7",
+    "line": "#d7dfdc"
+  },
+  "links": {
+    "mdn": "https://developer.mozilla.org/",
+    "htmlValidator": "https://validator.w3.org/nu/",
+    "php": "https://www.php.net/docs.php",
+    "owasp": "https://owasp.org/www-project-top-ten/",
+    "microsoftLearn": "https://learn.microsoft.com/aspnet/core/"
+  },
+  "learningOutcomes": [
+    "Comprehend basic knowledge and concepts of web programming and design.",
+    "Understand theories, principles, and concepts related to web design and programming.",
+    "Evaluate solutions and suggest improvements in the web programming and design field.",
+    "Design, test, and implement simple web software systems efficiently.",
+    "Apply software quality standards for web software.",
+    "Develop self-managed work, teamwork, and communication skills."
+  ],
+  "assessments": [
+    {
+      "item": "Quizzes",
+      "timing": "Weeks 4 and 9",
+      "weight": "10%"
+    },
+    {
+      "item": "Midterm",
+      "timing": "Week 7",
+      "weight": "20%"
+    },
+    {
+      "item": "Lab/Class Assignments",
+      "timing": "Weeks 5, 8, and 10",
+      "weight": "15%"
+    },
+    {
+      "item": "Lab Evaluations",
+      "timing": "All semester",
+      "weight": "15%"
+    },
+    {
+      "item": "Project",
+      "timing": "Week 13",
+      "weight": "10%"
+    },
+    {
+      "item": "Final Exam",
+      "timing": "Weeks 16 and 17",
+      "weight": "30%"
+    }
+  ],
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Introduction to the Web and Development Setup",
+      "module": "Web foundations",
+      "learn": "Internet vs Web, client/server, HTTP, URLs, browsers, tools, first website.",
+      "buildsOn": "No prerequisites",
+      "duration": "3 contact hours",
+      "status": "Ready",
+      "slides": "weeks/week01/slides/index.html",
+      "lab": "weeks/week01/lab/index.html",
+      "activity": "weeks/week01/activity/index.html",
+      "resources": "VS Code, browser, Live Server, DevTools",
+      "milestone": "Project launch: choose topic and create folder"
+    },
+    {
+      "week": 2,
+      "title": "HTML Foundations",
+      "module": "HTML and brief XHTML context",
+      "learn": "Document structure, text, links, images, semantics, tables, forms, validation.",
+      "buildsOn": "Week 1 first website",
+      "duration": "3 contact hours",
+      "status": "Ready",
+      "slides": "weeks/week02/slides/index.html",
+      "lab": "weeks/week02/lab/index.html",
+      "activity": "weeks/week02/activity/index.html",
+      "resources": "MDN HTML, Nu HTML Checker",
+      "milestone": "Profile-page prototype"
+    },
+    {
+      "week": 3,
+      "title": "CSS Fundamentals",
+      "module": "Cascading Style Sheets",
+      "learn": "Selectors, cascade, inheritance, color, typography, spacing, and external CSS.",
+      "buildsOn": "Semantic HTML pages",
+      "duration": "3 contact hours",
+      "status": "Planned",
+      "resources": "Department CSS Part 1 deck, MDN CSS",
+      "milestone": "Project style guide draft"
+    },
+    {
+      "week": 4,
+      "title": "HTML and CSS Integration",
+      "module": "Layout and responsive design",
+      "learn": "Box model, flexbox, responsive layout, navigation, media queries.",
+      "buildsOn": "CSS fundamentals",
+      "duration": "3 contact hours",
+      "status": "Planned",
+      "resources": "Department CSS Part 2 deck",
+      "milestone": "Quiz 1 and responsive homepage"
+    },
+    {
+      "week": 5,
+      "title": "XML and JSON in Practice",
+      "module": "Structured data",
+      "learn": "Well-formed XML, attributes vs elements, schemas at a glance, XML vs JSON.",
+      "buildsOn": "HTML tree thinking",
+      "duration": "3 contact hours",
+      "status": "Planned",
+      "resources": "XML deck, MDN XML references",
+      "milestone": "Lab/class assignment checkpoint"
+    },
+    {
+      "week": 6,
+      "title": "Modern Web Multimedia and Animation",
+      "module": "Flash replacement",
+      "learn": "What Flash was, why it ended, HTML media, SVG, CSS animation, Canvas demo.",
+      "buildsOn": "HTML and CSS",
+      "duration": "3 contact hours",
+      "status": "Planned",
+      "resources": "Flash deck modernized, MDN media/SVG/Canvas",
+      "milestone": "Project media plan"
+    },
+    {
+      "week": 7,
+      "title": "JavaScript Fundamentals",
+      "module": "Programming in the browser",
+      "learn": "Variables, types, operators, conditionals, loops, console debugging.",
+      "buildsOn": "Static pages",
+      "duration": "3 contact hours",
+      "status": "Planned",
+      "resources": "MDN JavaScript guide",
+      "milestone": "Midterm exam"
+    },
+    {
+      "week": 8,
+      "title": "JavaScript DOM, Events, Functions, Arrays, and Objects",
+      "module": "Interactive pages",
+      "learn": "Functions, arrays, objects, DOM selection, event handling, validation feedback.",
+      "buildsOn": "JavaScript basics",
+      "duration": "3 contact hours",
+      "status": "Planned",
+      "resources": "MDN DOM and events",
+      "milestone": "Interactive project feature"
+    },
+    {
+      "week": 9,
+      "title": "AJAX with Fetch, Async/Await, and JSON",
+      "module": "Client-server data",
+      "learn": "XHR history, Fetch API, promises, async/await, loading states, error handling.",
+      "buildsOn": "DOM and events",
+      "duration": "3 contact hours",
+      "status": "Planned",
+      "resources": "Ajax deck modernized, MDN Fetch",
+      "milestone": "Quiz 2 and data-loading demo"
+    },
+    {
+      "week": 10,
+      "title": "PHP Fundamentals and Form Processing",
+      "module": "Server-side programming",
+      "learn": "PHP 8 syntax, request data, validation, output escaping, sessions.",
+      "buildsOn": "HTML forms",
+      "duration": "3 contact hours",
+      "status": "Planned",
+      "resources": "PHP deck, PHP manual",
+      "milestone": "Lab/class assignment checkpoint"
+    },
+    {
+      "week": 11,
+      "title": "Database Access with PHP, PDO, SQL, and Prepared Statements",
+      "module": "Data-backed websites",
+      "learn": "Relational basics, CRUD, PDO, prepared statements, database error handling.",
+      "buildsOn": "PHP form processing",
+      "duration": "3 contact hours",
+      "status": "Planned",
+      "resources": "PHP manual, OWASP SQL injection guidance",
+      "milestone": "Project data plan or simulated data"
+    },
+    {
+      "week": 12,
+      "title": "Introduction to Java Server-Side Web Development",
+      "module": "Server-side comparison",
+      "learn": "Java web request flow, servlets conceptually, routing, templates, deployment vocabulary.",
+      "buildsOn": "Server-side concepts",
+      "duration": "3 contact hours",
+      "status": "Planned",
+      "resources": "Instructor-curated Java notes",
+      "milestone": "Project usability review"
+    },
+    {
+      "week": 13,
+      "title": "Introduction to Modern ASP.NET Core",
+      "module": "Microsoft web stack",
+      "learn": "ASP.NET Web Forms history, ASP.NET Core request pipeline, MVC/Razor overview.",
+      "buildsOn": "Server-side concepts",
+      "duration": "3 contact hours",
+      "status": "Planned",
+      "resources": "ASP.NET deck modernized, Microsoft Learn",
+      "milestone": "Project submission and presentation"
+    },
+    {
+      "week": 14,
+      "title": "Web Application Security Essentials and Project Integration",
+      "module": "Quality and security",
+      "learn": "XSS, validation, HTTPS, passwords, accessibility checks, publishing checklist.",
+      "buildsOn": "Whole semester",
+      "duration": "3 contact hours",
+      "status": "Planned",
+      "resources": "OWASP, MDN security",
+      "milestone": "Final integration and exam review"
+    }
+  ]
+}

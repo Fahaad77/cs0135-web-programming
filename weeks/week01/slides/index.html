@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>Week 1 Slides</title>
+          <link rel="stylesheet" href="../../../assets/css/slides.css">
+          <script src="../../../assets/js/slides.js" defer></script>
+        </head>
+        <body>
+          <main class="deck-shell" aria-label="Week 1 Slides">
+            <div>
+
+    <section class="slide">
+      <p class="kicker">Week 1 - CS 0135</p>
+      <h1>Introduction to the Web and Development Setup</h1>
+      <p>Today we learn how the web works, set up our tools, and publish a first local website.</p>
+      
+    </section>
+
+
+    <section class="slide">
+      <h2>Learning Outcomes</h2>
+      <ul>
+        <li>Explain Internet, Web, browser, client, server, URL, HTTP, and HTTPS.</li>
+        <li>Describe the roles of HTML, CSS, and JavaScript.</li>
+        <li>Create and preview a first website in VS Code with Live Server.</li>
+        <li>Use browser Developer Tools for a first debugging task.</li>
+      </ul>
+      
+    </section>
+
+
+    <section class="slide">
+      <h2>Prior-Knowledge Check</h2>
+      <ol>
+        <li>Is Google Chrome the Internet or a tool for using the Web?</li>
+        <li>What happens after you press Enter in the address bar?</li>
+        <li>Which file usually opens first in a website folder?</li>
+      </ol>
+      <p class="callout">Think first. Then compare with a partner.</p>
+      
+    </section>
+
+
+    <section class="slide">
+      <h2>Internet vs World Wide Web</h2>
+      <div class="two-col">
+        <div><h3>Internet</h3><p>The global network infrastructure connecting devices and networks.</p></div>
+        <div><h3>World Wide Web</h3><p>A service on the Internet that uses URLs, HTTP/HTTPS, browsers, and web servers.</p></div>
+      </div>
+      
+    </section>
+
+
+    <section class="slide">
+      <h2>Client and Server</h2>
+      <div class="diagram flow" aria-label="Request response diagram">
+        <div class="node">Browser<br>Client</div><div class="arrow">-></div><div class="node">HTTP Request</div><div class="arrow">-></div><div class="node">Web Server</div>
+        <div class="node">HTML/CSS/JS</div><div class="arrow"><-</div><div class="node">HTTP Response</div><div class="arrow"><-</div><div class="node">Files or App</div>
+      </div>
+      
+    </section>
+
+
+    <section class="slide">
+      <h2>URL Anatomy</h2>
+      <pre><code>https://example.com/students/profile.html</code></pre>
+      <ul>
+        <li><strong>https</strong>: secure protocol</li>
+        <li><strong>example.com</strong>: domain name</li>
+        <li><strong>/students/profile.html</strong>: path to a resource</li>
+      </ul>
+      
+    </section>
+
+
+    <section class="slide">
+      <h2>HTTP and HTTPS</h2>
+      <ul>
+        <li>HTTP is the request-response language browsers and servers use.</li>
+        <li>HTTPS adds encryption and identity checks.</li>
+        <li>Status codes summarize what happened: <code>200</code>, <code>404</code>, <code>500</code>.</li>
+      </ul>
+      
+    </section>
+
+
+    <section class="slide">
+      <h2>Static and Dynamic Websites</h2>
+      <div class="two-col">
+        <div><h3>Static</h3><p>Files are sent mostly as written: HTML, CSS, images, and JavaScript.</p></div>
+        <div><h3>Dynamic</h3><p>Server code or browser code creates changing content based on data or user actions.</p></div>
+      </div>
+      
+    </section>
+
+
+    <section class="slide">
+      <h2>HTML, CSS, and JavaScript</h2>
+      <div class="two-col">
+        <ul><li><strong>HTML</strong>: meaning and structure</li><li><strong>CSS</strong>: visual presentation</li><li><strong>JavaScript</strong>: behavior and interaction</li></ul>
+        <div class="browser-preview"><div class="browser-bar"></div><h3>Student Club</h3><p>HTML creates this heading. CSS makes it readable. JavaScript can respond when a user clicks.</p></div>
+      </div>
+      
+    </section>
+
+
+    <section class="slide">
+      <h2>How Browsers Render a Page</h2>
+      <ol>
+        <li>Request the HTML document.</li>
+        <li>Parse HTML into the DOM tree.</li>
+        <li>Download linked CSS, images, and JavaScript.</li>
+        <li>Calculate layout and paint pixels.</li>
+      </ol>
+      
+    </section>
+
+
+    <section class="slide">
+      <h2>VS Code Project Folder</h2>
+      <pre><code>week01-first-site/
+|-- index.html
+`-- images/
+    `-- placeholder.txt</code></pre>
+      <p>One folder per website keeps files predictable.</p>
+      
+    </section>
+
+
+    <section class="slide">
+      <h2>Complete First Website</h2>
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;My First Website&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;My First Website&lt;/h1&gt;
+  &lt;p&gt;I am learning how the web works.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      
+    </section>
+
+    <section class="slide">
+      <h2>Code Walkthrough</h2>
+      <ul>
+        <li><code>&lt;!DOCTYPE html&gt;</code> tells the browser to use modern HTML.</li>
+        <li><code>&lt;head&gt;</code> contains page information for the browser.</li>
+        <li><code>&lt;body&gt;</code> contains the content students see.</li>
+        <li><code>meta viewport</code> helps the page fit mobile screens.</li>
+      </ul>
+      
+    </section>
+
+    <section class="slide">
+      <h2>Predict the Output</h2>
+      <pre><code>&lt;h1&gt;CS 0135&lt;/h1&gt;
+&lt;p&gt;Web Programming and Design&lt;/p&gt;</code></pre>
+      <details class="callout">
+        <summary>Reveal answer</summary>
+        <p>The browser shows a large heading that says CS 0135, followed by a paragraph that says Web Programming and Design.</p>
+      </details>
+      
+    </section>
+
+
+    <section class="slide">
+      <h2>Tag, Element, Attribute</h2>
+      <pre><code>&lt;p class="intro"&gt;Welcome to CS 0135.&lt;/p&gt;</code></pre>
+      <ul>
+        <li><strong>Tag:</strong> <code>&lt;p&gt;</code> and <code>&lt;/p&gt;</code></li>
+        <li><strong>Element:</strong> the full paragraph from start tag to end tag</li>
+        <li><strong>Attribute:</strong> <code>class="intro"</code> adds extra information</li>
+      </ul>
+      
+    </section>
+
+
+    <section class="slide">
+      <h2>Find the Error</h2>
+      <pre><code>&lt;h1&gt;About Me&lt;h1&gt;
+&lt;p&gt;My name is Sara.&lt;/p&gt;</code></pre>
+      <p class="callout">What is wrong, and what might the browser do?</p>
+      <details class="callout">
+        <summary>Reveal answer</summary>
+        <p>The first heading should close with <code>&lt;/h1&gt;</code>. Browsers may repair the DOM, but valid source code is still the goal.</p>
+      </details>
+      
+    </section>
+
+
+    <section class="slide">
+      <h2>DevTools: Source vs DOM</h2>
+      <ul>
+        <li><strong>View Source</strong> shows the original HTML sent to the browser.</li>
+        <li><strong>Inspect</strong> shows the live DOM after the browser has parsed and repaired it.</li>
+        <li>The Console reports errors and lets us test small JavaScript commands later.</li>
+      </ul>
+      
+    </section>
+
+
+    <section class="slide">
+      <h2>Your Turn</h2>
+      <ol>
+        <li>Create <code>index.html</code>.</li>
+        <li>Add one heading, two paragraphs, and a list of three interests.</li>
+        <li>Open with Live Server.</li>
+        <li>Inspect one element in DevTools.</li>
+      </ol>
+      
+    </section>
+
+
+    <section class="slide">
+      <h2>Accessibility Starts Today</h2>
+      <ul>
+        <li>Use meaningful headings in order.</li>
+        <li>Write link text that explains the destination.</li>
+        <li>Do not rely on color alone to communicate meaning.</li>
+        <li>Test with keyboard navigation.</li>
+      </ul>
+      
+    </section>
+
+    <section class="slide">
+      <h2>Common Mistakes</h2>
+      <ul>
+        <li>Editing one file but previewing a different folder.</li>
+        <li>Forgetting to save before refreshing the browser.</li>
+        <li>Using opening tags where closing tags are needed.</li>
+        <li>Naming the home page <code>Index.html</code> or <code>index.html.txt</code>.</li>
+      </ul>
+      
+    </section>
+
+
+    <section class="slide">
+      <h2>Exit Ticket</h2>
+      <ol>
+        <li>In one sentence, explain what a browser requests from a server.</li>
+        <li>Name one difference between HTML and CSS.</li>
+        <li>Write one debugging question you still have.</li>
+      </ol>
+      
+    </section>
+
+
+    <section class="slide">
+      <h2>Next Week</h2>
+      <p>We will build a multi-section personal profile page using semantic HTML, links, images, tables, and a small form.</p>
+      
+    </section>
+
+            </div>
+            <div class="controls" aria-label="Slide controls">
+              <a class="home-link" href="../../../index.html">Course Home</a>
+              <div>Week 1 - <span data-current-slide>1</span>/<span data-total-slides></span></div>
+              <div>
+                <button type="button" data-prev aria-label="Previous slide">Prev</button>
+                <button type="button" data-next aria-label="Next slide">Next</button>
+                
+              </div>
+            </div>
+          </main>
+        </body>
+        </html>

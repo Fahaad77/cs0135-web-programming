@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Week 1 Activity</title>
+  <link rel="stylesheet" href="../../../assets/css/site.css">
+  <script src="../../../assets/js/request-response-activity.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="../../../index.html">Course Home</a>
+      <span>/</span>
+      <a href="../index.html">Week 1</a>
+      <span>/</span>
+      <span>Activity</span>
+    </nav>
+
+    <p class="eyebrow">Week 1 Activity</p>
+    <h1 class="page-title">Request and Response Sorting</h1>
+    <p class="lede">Arrange the steps in the order they usually happen when a browser loads a web page.</p>
+
+    <section class="instruction-section">
+      <h2>Instructions</h2>
+      <p class="student-task">Drag the items into order, or use the Move Up and Move Down buttons. Then choose Check Answer.</p>
+      <p>Attempts this session: <strong data-attempts>0</strong></p>
+      <div class="control-panel">
+        <button class="button primary" type="button" data-check>Check Answer</button>
+        <button class="button" type="button" data-hint>Show Hint</button>
+        <button class="button" type="button" data-reset>Reset</button>
+        <a class="button" href="../index.html">Return to Week</a>
+        <a class="button" href="../../../index.html">Return to Course Home</a>
+      </div>
+    </section>
+
+    <section class="instruction-section" aria-labelledby="sort-heading">
+      <h2 id="sort-heading">Steps to Sort</h2>
+      <p id="sort-help">The initial order is intentionally shuffled. Correct positions are marked only after you check your answer.</p>
+      <ol class="sortable-list" data-sort-list aria-describedby="sort-help"></ol>
+      <p class="visually-hidden" aria-live="polite" data-live-region></p>
+      <div class="feedback" data-feedback>Move the steps into the best order, then check your answer.</div>
+    </section>
+
+    <section class="instruction-section">
+      <h2>Explanation</h2>
+      <p>The request-response process starts with the user and browser, then moves to the server, and ends when the browser turns the response into a page students can see and inspect.</p>
+      <details class="solution-panel" data-reveal-answer hidden>
+        <summary>Reveal Complete Answer</summary>
+        <ol>
+          <li>User enters a URL.</li>
+          <li>Browser sends an HTTP request.</li>
+          <li>Server finds or generates the resource.</li>
+          <li>Browser receives an HTML response.</li>
+          <li>Browser parses HTML and builds the DOM.</li>
+        </ol>
+      </details>
+    </section>
+  </main>
+</body>
+</html>
