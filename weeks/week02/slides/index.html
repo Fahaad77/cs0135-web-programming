@@ -8,10 +8,11 @@
           <script src="../../../assets/js/slides.js" defer></script>
         </head>
         <body>
+          <a class="skip-link" href="#slides">Skip to slides</a>
           <main class="deck-shell" aria-label="Week 2 Slides">
-            <div>
+            <div id="slides" class="slide-frame">
 
-    <section class="slide"><p class="kicker">Week 2 - CS 0135</p><h1>HTML Foundations</h1><p>Build a semantic personal profile page that becomes the base for the semester project.</p></section>
+    <section class="slide slide--cover"><p class="kicker">Week 2 - CS 0135</p><h1>HTML Foundations</h1><p>Build a semantic personal profile page that becomes the base for the semester project.</p></section>
 
 
     <section class="slide"><h2>Learning Outcomes</h2><ul><li>Write a valid HTML document structure.</li><li>Use headings, paragraphs, emphasis, lists, links, images, tables, and forms correctly.</li><li>Choose semantic elements for page regions.</li><li>Validate HTML and fix common nesting errors.</li></ul></section>
@@ -61,12 +62,12 @@
 &lt;/ol&gt;</code></pre><details class="callout"><summary>Reveal answer</summary><p>The browser displays a numbered list with three steps in order.</p></details></section>
 
 
-    <section class="slide"><h2>Links and Useful Link Text</h2><pre><code>&lt;a href="https://developer.mozilla.org/"&gt;Read MDN Web Docs&lt;/a&gt;
-&lt;a href="projects.html"&gt;View my projects&lt;/a&gt;</code></pre><p class="callout">Avoid link text like "click here." The text should explain the destination.</p></section>
+    <section class="slide"><h2>Links and Useful Link Text</h2><pre><code>&lt;a href=&quot;https://developer.mozilla.org/&quot;&gt;Read MDN Web Docs&lt;/a&gt;
+&lt;a href=&quot;projects.html&quot;&gt;View my projects&lt;/a&gt;</code></pre><p class="callout">Avoid link text like "click here." The text should explain the destination.</p></section>
 
 
-    <section class="slide"><h2>Images and Alternative Text</h2><pre><code>&lt;img src="images/profile-workspace.svg"
-     alt="Desk with a laptop, notebook, and web design sketches"&gt;</code></pre><ul><li><code>src</code> points to the file.</li><li><code>alt</code> communicates the image purpose.</li><li>Decorative images may use empty alt text: <code>alt=""</code>.</li></ul></section>
+    <section class="slide"><h2>Images and Alternative Text</h2><pre><code>&lt;img src=&quot;images/profile-workspace.svg&quot;
+     alt=&quot;Desk with a laptop, notebook, and web design sketches&quot;&gt;</code></pre><ul><li><code>src</code> points to the file.</li><li><code>alt</code> communicates the image purpose.</li><li>Decorative images may use empty alt text: <code>alt=""</code>.</li></ul></section>
 
 
     <section class="slide"><h2>File Paths</h2><pre><code>profile-site/
@@ -131,11 +132,13 @@
             </div>
             <div class="controls" aria-label="Slide controls">
               <a class="home-link" href="../../../index.html">Course Home</a>
-              <div>Week 2 - <span data-current-slide>1</span>/<span data-total-slides></span></div>
-              <div>
+              <div class="slide-status">
+                <div>Week 2 - <span data-current-slide>1</span>/<span data-total-slides></span></div>
+                <div class="progress-track" aria-hidden="true"><span data-progress-bar></span></div>
+              </div>
+              <div class="control-buttons">
                 <button type="button" data-prev aria-label="Previous slide">Prev</button>
                 <button type="button" data-next aria-label="Next slide">Next</button>
-                
               </div>
             </div>
           </main>
