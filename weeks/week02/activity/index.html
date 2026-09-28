@@ -17,8 +17,8 @@
     </nav>
 
     <p class="eyebrow">Week 2 Activity</p>
-    <h1 class="page-title">Debug a Profile Snippet</h1>
-    <p class="lede">Repair a broken HTML snippet, validate your fix, and explain what changed.</p>
+    <h1 class="page-title">Choose, Trace, and Fix HTML</h1>
+    <p class="lede">Practice semantic text formatting, image paths, and useful alternative text before the lab.</p>
 
     <div class="control-panel">
       <a class="button" href="../index.html">Return to Week</a>
@@ -26,37 +26,89 @@
     </div>
 
     <section class="instruction-section">
-      <h2>Attempt</h2>
-      <p class="student-task">Copy the snippet into a temporary HTML file. Fix the structure before looking at the solution guidance.</p>
-      <pre><code>&lt;main&gt;
-  &lt;section id="goals"&gt;
-    &lt;h3&gt;Goals&lt;/h2&gt;
-    &lt;p&gt;I want to learn HTML
-    &lt;ul&gt;
-      &lt;li&gt;Build pages&lt;/li&gt;
-      &lt;li&gt;Validate code
-    &lt;/ol&gt;
-  &lt;/section&gt;
-&lt;/main&gt;</code></pre>
+      <h2>Part 1: Choose the Better Element</h2>
+      <p class="student-task">For each situation, choose a semantic HTML element and explain your choice in one short phrase.</p>
+      <ol>
+        <li>A warning sentence that students must read before submitting.</li>
+        <li>A word that should be spoken with stress in a sentence.</li>
+        <li>A changed price where the old value should remain visible.</li>
+        <li>The chemical formula for water.</li>
+        <li>A highlighted score in a feedback paragraph.</li>
+      </ol>
+      <details>
+        <summary>Self-check</summary>
+        <p>Possible answers: <code>strong</code>, <code>em</code>, <code>del</code> plus <code>ins</code>, <code>sub</code>, and <code>mark</code>.</p>
+      </details>
     </section>
 
     <section class="instruction-section">
-      <h2>Feedback and Retry</h2>
+      <h2>Part 2: Correct the Misuse</h2>
+      <p class="student-task">Rewrite the snippet so the meaning is clearer. Keep the visible result beginner-friendly.</p>
+      <pre><code>&lt;p&gt;&lt;b&gt;Important:&lt;/b&gt; Submit the profile page by Thursday.&lt;/p&gt;
+&lt;p&gt;I am &lt;i&gt;very excited&lt;/i&gt; to build my first website.&lt;/p&gt;</code></pre>
+      <details>
+        <summary>Self-check</summary>
+        <pre><code>&lt;p&gt;&lt;strong&gt;Important:&lt;/strong&gt; Submit the profile page by Thursday.&lt;/p&gt;
+&lt;p&gt;I am &lt;em&gt;very excited&lt;/em&gt; to build my first website.&lt;/p&gt;</code></pre>
+      </details>
+    </section>
+
+    <section class="instruction-section">
+      <h2>Part 3: Absolute or Relative?</h2>
+      <p class="student-task">Label each image path as absolute or relative.</p>
       <ol>
-        <li>Run the snippet through the HTML validator.</li>
-        <li>Fix one error at a time, then validate again.</li>
-        <li>Write three sentences explaining the problems you fixed.</li>
+        <li><code>https://example.com/images/student.jpg</code></li>
+        <li><code>images/student.jpg</code></li>
+        <li><code>/images/student.jpg</code></li>
+        <li><code>../assets/profile-workspace.svg</code></li>
       </ol>
+      <details>
+        <summary>Self-check</summary>
+        <p>1 is absolute. 2 and 4 are relative. 3 is root-relative, which starts from the site root instead of the current file.</p>
+      </details>
+    </section>
+
+    <section class="instruction-section">
+      <h2>Part 4: Which Path Works?</h2>
+      <p class="student-task">The HTML file is <code>week02-project/index.html</code>. Choose the path that reaches the image.</p>
+      <pre><code>week02-project/
+|-- index.html
+`-- images/
+    `-- student.jpg</code></pre>
+      <ol>
+        <li><code>student.jpg</code></li>
+        <li><code>images/student.jpg</code></li>
+        <li><code>week02-project/images/student.jpg</code></li>
+      </ol>
+      <details>
+        <summary>Self-check</summary>
+        <p><code>images/student.jpg</code> works because the browser starts beside <code>index.html</code>, opens the <code>images</code> folder, then loads <code>student.jpg</code>.</p>
+      </details>
+    </section>
+
+    <section class="instruction-section">
+      <h2>Part 5: Write Useful Alt Text</h2>
+      <p class="student-task">Write alt text for a photo that shows a student working on a laptop beside a notebook and phone.</p>
+      <ul>
+        <li>Avoid vague text such as <q>image</q> or <q>picture</q>.</li>
+        <li>Describe the content or purpose in the page context.</li>
+        <li>Use <code>alt=""</code> only if the image is decorative.</li>
+      </ul>
+      <details>
+        <summary>Self-check</summary>
+        <p>A useful answer could be: <q>Student working on a laptop beside a notebook and phone.</q></p>
+      </details>
     </section>
 
     <section class="instruction-section">
       <h2>Submit</h2>
       <ul>
-        <li>The corrected code.</li>
-        <li>Three sentences explaining the problems you fixed.</li>
-        <li>A screenshot or copied message from the HTML validator.</li>
+        <li>Your corrected formatting snippet.</li>
+        <li>Your labels for the image paths.</li>
+        <li>The working relative path from the folder diagram.</li>
+        <li>One useful alt text sentence.</li>
       </ul>
-      <p><strong>Marks:</strong> 4 marks for structure, nesting, explanation, and validation evidence.</p>
+      <p><strong>Marks:</strong> 4 marks for semantic choices, path reasoning, alt text quality, and clear explanation.</p>
     </section>
   </main>
 </body>

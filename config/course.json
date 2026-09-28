@@ -103,9 +103,12 @@
       "learn": "Selectors, cascade, inheritance, color, typography, spacing, and external CSS.",
       "buildsOn": "Semantic HTML pages",
       "duration": "3 contact hours",
-      "status": "Planned",
-      "resources": "Department CSS Part 1 deck, MDN CSS",
-      "milestone": "Project style guide draft"
+      "status": "Ready",
+      "resources": "Course CSS practice materials and W3Schools CSS reference",
+      "milestone": "Project style guide draft",
+      "slides": "weeks/week03/slides/index.html",
+      "lab": "weeks/week03/lab/index.html",
+      "activity": "weeks/week03/activity/index.html"
     },
     {
       "week": 4,
@@ -114,9 +117,12 @@
       "learn": "Box model, flexbox, responsive layout, navigation, media queries.",
       "buildsOn": "CSS fundamentals",
       "duration": "3 contact hours",
-      "status": "Planned",
-      "resources": "Department CSS Part 2 deck",
-      "milestone": "Quiz 1 and responsive homepage"
+      "status": "Ready",
+      "resources": "Course responsive design practice materials and W3Schools CSS reference",
+      "milestone": "Quiz 1 and responsive homepage",
+      "slides": "weeks/week04/slides/index.html",
+      "lab": "weeks/week04/lab/index.html",
+      "activity": "weeks/week04/activity/index.html"
     },
     {
       "week": 5,
@@ -125,9 +131,12 @@
       "learn": "Well-formed XML, attributes vs elements, schemas at a glance, XML vs JSON.",
       "buildsOn": "HTML tree thinking",
       "duration": "3 contact hours",
-      "status": "Planned",
-      "resources": "XML deck, MDN XML references",
-      "milestone": "Lab/class assignment checkpoint"
+      "status": "Ready",
+      "resources": "Course XML/JSON practice materials and web data examples",
+      "milestone": "Project JSON data file checkpoint",
+      "slides": "weeks/week05/slides/index.html",
+      "lab": "weeks/week05/lab/index.html",
+      "activity": "weeks/week05/activity/index.html"
     },
     {
       "week": 6,

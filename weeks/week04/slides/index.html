@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Week 4 Slides</title>
+  <link rel="stylesheet" href="../../../assets/css/slides.css">
+  <script src="../../../assets/js/slides.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#slides">Skip to slides</a>
+  <main class="deck-shell" aria-label="Week 4 Slides">
+    <div id="slides" class="slide-frame">
+<section class="slide slide--cover"><p class="kicker">Week 4 - CS 0135</p><h1>HTML and CSS Integration</h1><p class="lede">Build responsive page layouts with semantic containers, the box model, Flexbox, media queries, and mobile testing.</p></section>
+
+<section class="slide"><p class="kicker">Opening question</p><h2>Why Does This Card Look Too Wide?</h2><div class="two-col"><div class="mistake-card"><h3>Content box surprise</h3><p>Width + padding + border can exceed the expected size.</p></div><div class="card accent"><h3>Modern habit</h3><p><code>box-sizing: border-box</code> makes layout math easier.</p></div></div></section>
+
+<section class="slide"><p class="kicker">Learning outcomes</p><h2>By the End You Can</h2><ul><li>Explain content, padding, border, and margin.</li><li>Use semantic sections plus <code>div</code> and <code>span</code> appropriately.</li><li>Build responsive navigation and cards with Flexbox.</li><li>Write one mobile-first media query and test with DevTools.</li></ul></section>
+
+<section class="slide"><p class="kicker">Roadmap</p><h2>Today We Build a Homepage</h2><ol class="agenda-list"><li>Box model</li><li>Lists, color, and backgrounds</li><li>Block vs inline</li><li>Semantic containers</li><li>Flexbox layout</li><li>Responsive media queries</li></ol></section>
+
+<section class="slide slide--section"><p class="kicker">Part 1</p><h2>Every Element Is a Box</h2><p class="lede">Layout becomes easier when you can see the invisible boxes around content.</p></section>
+
+<section class="slide"><p class="kicker">Box model</p><h2>Four Layers</h2><div class="diagram"><div class="visual-grid"><div class="card accent"><h3>Content</h3><p>Text or image.</p></div><div class="card"><h3>Padding</h3><p>Space inside the border.</p></div><div class="card gold"><h3>Border</h3><p>Line around padding.</p></div><div class="card"><h3>Margin</h3><p>Space outside the element.</p></div></div></div></section>
+
+<section class="slide"><p class="kicker">Box sizing</p><h2>Make Width Predictable</h2><div class="code-card"><div class="code-label"><span>CSS</span><span>global default</span></div><pre><code>* {
+  box-sizing: border-box;
+}</code></pre></div><p class="callout">With border-box, the declared width includes content, padding, and border.</p></section>
+
+<section class="slide"><p class="kicker">Margin or padding?</p><h2>Inside Space Versus Outside Space</h2><div class="code-demo"><div class="code-card"><pre><code>.card {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 2px solid #d7dfdc;
+}</code></pre></div><div class="card accent"><h3>Memory rule</h3><p>Padding separates content from its border. Margin separates one element from another.</p></div></div></section>
+
+<section class="slide"><p class="kicker">Borders</p><h2>Shorthand and Radius</h2><div class="code-card"><div class="code-label"><span>CSS</span><span>border</span></div><pre><code>.notice {
+  border: 2px solid #007c6c;
+  border-radius: 8px;
+}</code></pre></div></section>
+
+<section class="slide"><p class="kicker">Margin collapse</p><h2>A Basic Warning</h2><div class="callout"><p>Vertical margins between block elements can sometimes combine instead of adding together. If spacing looks surprising, inspect the box model in DevTools.</p></div></section>
+
+<section class="slide"><p class="kicker">Lists and text</p><h2>Style Lists Without Breaking Meaning</h2><div class="code-card"><div class="code-label"><span>CSS</span><span>list and text review</span></div><pre><code>nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+p {
+  text-align: left;
+}</code></pre></div></section>
+
+<section class="slide"><p class="kicker">Backgrounds</p><h2>Color First, Images Carefully</h2><div class="two-col"><div class="card accent"><h3><code>background-color</code></h3><p>Reliable, lightweight, and readable.</p></div><div class="card"><h3><code>background-image</code></h3><p>Use local images only, with enough contrast for text.</p></div></div></section>
+
+<section class="slide slide--section"><p class="kicker">Part 2</p><h2>Choose the Right Container</h2><p class="lede">Use meaningful HTML when it exists, and generic containers only when needed.</p></section>
+
+<section class="slide"><p class="kicker">Display behavior</p><h2>Block Versus Inline</h2><div class="two-col"><div class="card accent"><h3>Block</h3><p>Starts on a new line and can take full available width. Examples: <code>div</code>, <code>section</code>, <code>p</code>.</p></div><div class="card gold"><h3>Inline</h3><p>Flows inside text. Examples: <code>span</code>, <code>a</code>, <code>strong</code>.</p></div></div></section>
+
+<section class="slide"><p class="kicker">Semantic first</p><h2><code>div</code> and <code>span</code> Have No Meaning</h2><div class="visual-grid"><div class="card accent"><h3>Use <code>header</code></h3><p>Introductory page or section content.</p></div><div class="card"><h3>Use <code>nav</code></h3><p>Major navigation links.</p></div><div class="card gold"><h3>Use <code>main</code></h3><p>The primary page content.</p></div><div class="card"><h3>Use <code>div</code></h3><p>Only when you need a generic layout wrapper.</p></div></div></section>
+
+<section class="slide"><p class="kicker">Demo structure</p><h2>Responsive Homepage Files</h2><div class="terminal-card"><div class="terminal-label">Files</div><pre><code>week04-demo/
+|-- index.html
+|-- styles.css
+`-- images/
+    `-- course-pattern.svg</code></pre></div></section>
+
+<section class="slide"><p class="kicker">Page shell</p><h2>Constrain Without Fixed Width</h2><div class="code-card"><div class="code-label"><span>CSS</span><span>responsive page</span></div><pre><code>.page {
+  width: min(90%, 1100px);
+  margin-inline: auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}</code></pre></div></section>
+
+<section class="slide slide--section"><p class="kicker">Part 3</p><h2>Flexbox Aligns Groups of Boxes</h2><p class="lede">Flexbox is our primary Week 4 layout method. Float is for text wrapping or legacy reading.</p></section>
+
+<section class="slide"><p class="kicker">Flex model</p><h2>Container and Items</h2><div class="diagram"><div class="flow"><div class="node dark">flex container</div><div class="arrow">contains</div><div class="node">item</div><div class="node">item</div><div class="node">item</div></div></div><p class="callout">Main axis follows <code>flex-direction</code>; cross axis runs perpendicular.</p></section>
+
+<section class="slide"><p class="kicker">Card layout</p><h2>Flexible Cards</h2><div class="code-card"><div class="code-label"><span>CSS</span><span>card grid</span></div><pre><code>.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.card {
+  flex: 1 1 250px;
+}</code></pre></div></section>
+
+<section class="slide"><p class="kicker">Alignment</p><h2>Main and Cross Axis</h2><div class="code-card"><div class="code-label"><span>CSS</span><span>navigation</span></div><pre><code>.site-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}</code></pre></div></section>
+
+<section class="slide"><p class="kicker">Wrapping</p><h2>When There Is Not Enough Room</h2><div class="two-col"><div class="mistake-card"><h3>No wrap</h3><p>Items may overflow the viewport.</p></div><div class="card accent"><h3><code>flex-wrap: wrap</code></h3><p>Items can move onto another line.</p></div></div></section>
+
+<section class="slide"><p class="kicker">Responsive units</p><h2>Use Flexible Measurements</h2><div class="visual-grid"><div class="card"><h3><code>%</code></h3><p>Relative to parent.</p></div><div class="card accent"><h3><code>rem</code></h3><p>Relative to root font size.</p></div><div class="card gold"><h3><code>vw</code></h3><p>Relative to viewport width; use carefully.</p></div><div class="card"><h3><code>max-width</code></h3><p>Stops content from becoming too wide.</p></div></div></section>
+
+<section class="slide"><p class="kicker">Media query</p><h2>Mobile Adjustment</h2><div class="code-card"><div class="code-label"><span>CSS</span><span>breakpoint</span></div><pre><code>@media (max-width: 700px) {
+  .site-nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}</code></pre></div></section>
+
+<section class="slide"><p class="kicker">Desktop and mobile</p><h2>Same Content, Different Arrangement</h2><div class="two-col"><div class="browser-preview"><div class="browser-bar"></div><div class="browser-body"><p><strong>Desktop:</strong> nav links in a row, cards beside each other.</p></div></div><div class="browser-preview"><div class="browser-bar"></div><div class="browser-body"><p><strong>Mobile:</strong> nav stacks, cards wrap, image stays fluid.</p></div></div></div></section>
+
+<section class="slide"><p class="kicker">DevTools</p><h2>Device Toolbar</h2><ol class="step-list"><li class="step">Open DevTools</li><li class="step">Toggle device toolbar</li><li class="step">Try 390px width</li><li class="step">Check scrolling and focus</li></ol></section>
+
+<section class="slide"><p class="kicker">Float context</p><h2>Where Float Still Belongs</h2><div class="two-col"><div class="card"><h3>Reasonable</h3><p>Text wrapping around a small image.</p></div><div class="mistake-card"><h3>Avoid</h3><p>Building the whole page layout with floats.</p></div></div></section>
+
+<section class="slide"><p class="kicker">Common mistake</p><h2>Fixed Width Page</h2><div class="mistake-card"><p><code>.page { width: 1100px; }</code> can force horizontal scrolling on phones.</p></div><p class="callout">Use <code>width: min(90%, 1100px)</code> or similar responsive constraints.</p></section>
+
+<section class="slide"><p class="kicker">Guided practice</p><h2>Turn Project Sections into Cards</h2><div class="turn-card"><ol><li>Create a semantic homepage structure.</li><li>Place planned pages in a responsive nav.</li><li>Build three project cards with Flexbox.</li><li>Add one media query and test mobile.</li></ol></div></section>
+
+<section class="slide"><p class="kicker">Project connection</p><h2>Week 4 Milestone</h2><ul><li>Responsive homepage.</li><li>Navigation to planned pages.</li><li>Color and typography system.</li><li>At least two reusable components.</li><li>Desktop and mobile screenshots.</li></ul></section>
+
+<section class="slide"><p class="kicker">Recap</p><h2>Layout Is Managed Space</h2><div class="visual-grid three"><div class="card accent"><h3>Box model</h3><p>Content, padding, border, margin.</p></div><div class="card gold"><h3>Flexbox</h3><p>Arrange and wrap groups.</p></div><div class="card"><h3>Responsive</h3><p>Use flexible units and media queries.</p></div></div><p class="callout">Exit question: when would you use padding instead of margin?</p></section>
+
+    </div>
+    <div class="controls" aria-label="Slide controls">
+      <a class="home-link" href="../../../index.html">Course Home</a>
+      <div class="slide-status">
+        <div>Week 4 - <span data-current-slide>1</span>/<span data-total-slides></span></div>
+        <div class="progress-track" aria-hidden="true"><span data-progress-bar></span></div>
+      </div>
+      <div class="control-buttons">
+        <button type="button" data-prev aria-label="Previous slide">Prev</button>
+        <button type="button" data-next aria-label="Next slide">Next</button>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

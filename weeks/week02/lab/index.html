@@ -37,9 +37,11 @@
       <h2>Learning Outcomes</h2>
       <ul>
         <li>Use semantic regions including <code>header</code>, <code>nav</code>, <code>main</code>, <code>section</code>, <code>article</code>, and <code>footer</code>.</li>
-        <li>Add useful links, images, lists, a data table, and a basic form.</li>
-        <li>Write meaningful alternative text for an image.</li>
-        <li>Validate HTML and fix common nesting errors.</li>
+        <li>Add meaningful formatting with at least four different text-formatting elements.</li>
+        <li>Display a local image using a relative path from an <code>images</code> folder.</li>
+        <li>Write meaningful alternative text and sensible image dimensions without distortion.</li>
+        <li>Add one small inline-style example clearly identified as a CSS preview.</li>
+        <li>Validate HTML and fix common nesting or path errors.</li>
       </ul>
     </section>
 
@@ -49,6 +51,7 @@
 |-- index.html
 `-- images/
     `-- profile-workspace.svg</code></pre>
+      <p class="student-task">The image path from <code>index.html</code> is <code>images/profile-workspace.svg</code>.</p>
     </section>
 
     <section class="instruction-section">
@@ -61,16 +64,44 @@
     </section>
 
     <section class="instruction-section">
-      <h2>Stage 2: Profile Content</h2>
+      <h2>Stage 2: Meaningful Text Formatting</h2>
       <ol>
         <li>Replace placeholder text with your own profile introduction.</li>
-        <li>Add the provided image with useful alt text.</li>
-        <li>Add at least three learning goals in a list.</li>
+        <li>Use at least four different formatting elements such as <code>strong</code>, <code>em</code>, <code>mark</code>, <code>small</code>, <code>del</code>, <code>ins</code>, <code>sub</code>, or <code>sup</code>.</li>
+        <li>Use <code>strong</code> for importance and <code>em</code> for stress emphasis. Do not use <code>b</code> or <code>i</code> when a semantic element is better.</li>
       </ol>
     </section>
 
     <section class="instruction-section">
-      <h2>Stage 3: Project and Contact Sections</h2>
+      <h2>Stage 3: Local Image</h2>
+      <ol>
+        <li>Keep the provided <code>images</code> folder in the same folder as <code>index.html</code>.</li>
+        <li>Add the profile image with <code>src="images/profile-workspace.svg"</code>.</li>
+        <li>Write useful alt text that describes the image purpose in your profile page.</li>
+        <li>Add sensible <code>width</code> and <code>height</code> values without squashing the image.</li>
+      </ol>
+      <pre><code>&lt;img
+  src="images/profile-workspace.svg"
+  alt="Desk with a laptop, notebook, and web design sketches"
+  width="500"
+  height="350"
+&gt;</code></pre>
+    </section>
+
+    <section class="instruction-section">
+      <h2>Stage 4: CSS Preview</h2>
+      <ol>
+        <li>Add one small inline-style example to a heading or section.</li>
+        <li>Use a readable color combination.</li>
+        <li>Add a short note in the page text that says this is a CSS preview for Week 3.</li>
+      </ol>
+      <pre><code>&lt;h2 style="background-color: powderblue;"&gt;
+  Learning Goals
+&lt;/h2&gt;</code></pre>
+    </section>
+
+    <section class="instruction-section">
+      <h2>Stage 5: Project and Contact Sections</h2>
       <ol>
         <li>Add one project idea inside an <code>article</code>.</li>
         <li>Create a small study-plan table with a caption and header cells.</li>
@@ -80,8 +111,8 @@
 
     <section class="instruction-section">
       <h2>Expected Browser Result</h2>
-      <p>A personal profile page with clear semantic sections, working navigation, a visible SVG image, table data, and a labeled form.</p>
-      <p class="student-task"><strong>Modification challenge:</strong> Add a second project idea and link it from the page navigation.</p>
+      <p>A personal profile page with semantic sections, working navigation, meaningful formatting, a visible local image, useful alt text, a small CSS preview, table data, and a labeled form.</p>
+      <p class="student-task"><strong>Modification challenge:</strong> Add a second project idea and mark the newer idea with <code>ins</code>.</p>
     </section>
 
     <section class="instruction-section">
@@ -89,9 +120,13 @@
       <ul class="checklist">
         <li><input type="checkbox"> The page has one <code>h1</code> and logical section headings.</li>
         <li><input type="checkbox"> Navigation links jump to the correct sections.</li>
-        <li><input type="checkbox"> The image loads and has useful alt text.</li>
+        <li><input type="checkbox"> At least four formatting elements are used meaningfully.</li>
+        <li><input type="checkbox"> The local image loads from <code>images/profile-workspace.svg</code>.</li>
+        <li><input type="checkbox"> The image has useful alt text and sensible dimensions.</li>
+        <li><input type="checkbox"> One inline-style example is labeled as a CSS preview.</li>
         <li><input type="checkbox"> The table is used for tabular data, not layout.</li>
         <li><input type="checkbox"> Every form control has a visible label.</li>
+        <li><input type="checkbox"> The finished page passes HTML validation.</li>
       </ul>
     </section>
 
@@ -99,12 +134,17 @@
       <h2>Troubleshooting</h2>
       <ul>
         <li><strong>Image does not show:</strong> check the path <code>images/profile-workspace.svg</code> and folder spelling.</li>
+        <li><strong>Image looks stretched:</strong> use dimensions that match the image shape, or remove one dimension and let the browser preserve proportion.</li>
         <li><strong>Navigation link does not move:</strong> check that <code>href="#projects"</code> matches <code>id="projects"</code>.</li>
-        <li><strong>Form label does not focus input:</strong> match the label <code>for</code> value with the input <code>id</code>.</li>
+        <li><strong>Formatting looks right but meaning is wrong:</strong> use <code>strong</code> for importance and <code>em</code> for emphasis.</li>
         <li><strong>Validator reports mismatched tags:</strong> check opening and closing tags from the inside out.</li>
       </ul>
     </section>
-    <section class="instruction-section"><h2>In-Class Review</h2><p>The instructor will review a completed version in class.</p></section>
+
+    <section class="instruction-section">
+      <h2>In-Class Review</h2>
+      <p>The instructor will review a completed version in class.</p>
+    </section>
   </main>
 </body>
 </html>

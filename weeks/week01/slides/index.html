@@ -1,138 +1,147 @@
 <!DOCTYPE html>
-        <html lang="en">
-        <head>
-          <meta charset="utf-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1">
-          <title>Week 1 Slides</title>
-          <link rel="stylesheet" href="../../../assets/css/slides.css">
-          <script src="../../../assets/js/slides.js" defer></script>
-        </head>
-        <body>
-          <a class="skip-link" href="#slides">Skip to slides</a>
-          <main class="deck-shell" aria-label="Week 1 Slides">
-            <div id="slides" class="slide-frame">
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Week 1 Slides</title>
+  <link rel="stylesheet" href="../../../assets/css/slides.css">
+  <script src="../../../assets/js/slides.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#slides">Skip to slides</a>
+  <main class="deck-shell" aria-label="Week 1 Slides">
+    <div id="slides" class="slide-frame">
 
-    <section class="slide slide--cover">
-      <p class="kicker">Week 1 - CS 0135</p>
-      <h1>Introduction to the Web and Development Setup</h1>
-      <p>Today we learn how the web works, set up our tools, and publish a first local website.</p>
-      
-    </section>
+      <section class="slide slide--cover">
+        <p class="kicker">Week 1 - CS 0135</p>
+        <h1>Introduction to the Web and Development Setup</h1>
+        <p class="lede">Today we learn how the web works, set up our tools, and publish a first local website.</p>
+        
+      </section>
 
+      <section class="slide">
+        <div class="slide-header"><p class="kicker">Roadmap</p><h2>Learning Outcomes</h2></div>
+        <div class="slide-content">
+          <ol class="agenda-list">
+            <li class="fragment">Explain Internet, Web, browser, client, server, URL, HTTP, and HTTPS.</li>
+            <li class="fragment">Describe the roles of HTML, CSS, and JavaScript.</li>
+            <li class="fragment">Create and preview a first website in VS Code with Live Server.</li>
+            <li class="fragment">Use browser Developer Tools for a first debugging task.</li>
+          </ol>
+        </div>
+        
+      </section>
 
-    <section class="slide">
-      <h2>Learning Outcomes</h2>
-      <ul>
-        <li>Explain Internet, Web, browser, client, server, URL, HTTP, and HTTPS.</li>
-        <li>Describe the roles of HTML, CSS, and JavaScript.</li>
-        <li>Create and preview a first website in VS Code with Live Server.</li>
-        <li>Use browser Developer Tools for a first debugging task.</li>
-      </ul>
-      
-    </section>
+      <section class="slide slide--center">
+        <p class="kicker">Prior-Knowledge Check</p>
+        <h2>Think, Then Compare</h2>
+        <div class="slide-content">
+          <div class="visual-grid three">
+            <article class="turn-card fragment"><h3>Browser</h3><p>Is Google Chrome the Internet or a tool for using the Web?</p></article>
+            <article class="turn-card fragment"><h3>Request</h3><p>What happens after you press Enter in the address bar?</p></article>
+            <article class="turn-card fragment"><h3>Folder</h3><p>Which file usually opens first in a website folder?</p></article>
+          </div>
+          <p class="callout"><strong>Routine:</strong> Think silently, then compare with a partner.</p>
+        </div>
+        
+      </section>
 
+      <section class="slide">
+        <div class="slide-header"><p class="kicker">Concept Model</p><h2>Internet vs World Wide Web</h2></div>
+        <div class="slide-content two-col">
+          <article class="card accent"><h3>Internet</h3><p>The global network infrastructure connecting devices and networks.</p></article>
+          <article class="card gold"><h3>World Wide Web</h3><p>A service on the Internet that uses URLs, HTTP/HTTPS, browsers, and web servers.</p></article>
+        </div>
+        
+      </section>
 
-    <section class="slide">
-      <h2>Prior-Knowledge Check</h2>
-      <ol>
-        <li>Is Google Chrome the Internet or a tool for using the Web?</li>
-        <li>What happens after you press Enter in the address bar?</li>
-        <li>Which file usually opens first in a website folder?</li>
-      </ol>
-      <p class="callout">Think first. Then compare with a partner.</p>
-      
-    </section>
+      <section class="slide">
+        <div class="slide-header"><p class="kicker">Request / Response</p><h2>Client and Server</h2></div>
+        <div class="slide-content">
+          <div class="diagram flow" aria-label="Request response diagram">
+            <div class="node">Browser<br>Client</div><div class="arrow">-></div><div class="node gold">HTTP<br>Request</div><div class="arrow">-></div><div class="node dark">Web<br>Server</div>
+          </div>
+          <div class="diagram flow" aria-label="Response diagram">
+            <div class="node dark">Files<br>or App</div><div class="arrow">-></div><div class="node gold">HTTP<br>Response</div><div class="arrow">-></div><div class="node">HTML<br>CSS<br>JS</div>
+          </div>
+        </div>
+        
+      </section>
 
+      <section class="slide">
+        <div class="slide-header"><p class="kicker">URL Anatomy</p><h2>Read a Web Address</h2></div>
+        <div class="slide-content">
+          <div class="code-card"><div class="code-label">URL</div><pre><code>https://example.com/students/profile.html</code></pre></div>
+          <div class="url-parts">
+            <div class="url-box"><strong>Protocol</strong><code>https</code><p>Secure request rules.</p></div>
+            <div class="url-box"><strong>Domain</strong><code>example.com</code><p>Readable site name.</p></div>
+            <div class="url-box"><strong>Path</strong><code>/students/profile.html</code><p>Resource location.</p></div>
+          </div>
+        </div>
+        
+      </section>
 
-    <section class="slide">
-      <h2>Internet vs World Wide Web</h2>
-      <div class="two-col">
-        <div><h3>Internet</h3><p>The global network infrastructure connecting devices and networks.</p></div>
-        <div><h3>World Wide Web</h3><p>A service on the Internet that uses URLs, HTTP/HTTPS, browsers, and web servers.</p></div>
-      </div>
-      
-    </section>
+      <section class="slide">
+        <div class="slide-header"><p class="kicker">Protocol</p><h2>HTTP and HTTPS</h2></div>
+        <div class="slide-content visual-grid three">
+          <article class="card"><h3>HTTP</h3><p>The request-response language browsers and servers use.</p></article>
+          <article class="card accent"><h3>HTTPS</h3><p>Adds encryption and identity checks while data travels.</p></article>
+          <article class="card gold"><h3>Status</h3><p><code>200</code>, <code>404</code>, and <code>500</code> summarize what happened.</p></article>
+        </div>
+        
+      </section>
 
+      <section class="slide">
+        <div class="slide-header"><p class="kicker">Site Types</p><h2>Static and Dynamic Websites</h2></div>
+        <div class="slide-content two-col">
+          <article class="card accent"><h3>Static</h3><p>Files are sent mostly as written: HTML, CSS, images, and JavaScript.</p></article>
+          <article class="card gold"><h3>Dynamic</h3><p>Server code or browser code creates changing content based on data or user actions.</p></article>
+        </div>
+        
+      </section>
 
-    <section class="slide">
-      <h2>Client and Server</h2>
-      <div class="diagram flow" aria-label="Request response diagram">
-        <div class="node">Browser<br>Client</div><div class="arrow">-></div><div class="node">HTTP Request</div><div class="arrow">-></div><div class="node">Web Server</div>
-        <div class="node">HTML/CSS/JS</div><div class="arrow"><-</div><div class="node">HTTP Response</div><div class="arrow"><-</div><div class="node">Files or App</div>
-      </div>
-      
-    </section>
+      <section class="slide">
+        <div class="slide-header"><p class="kicker">Three-Language Model</p><h2>HTML, CSS, and JavaScript</h2></div>
+        <div class="slide-content split-demo wide-left">
+          <div class="visual-grid three">
+            <article class="card accent"><h3>HTML</h3><p>Meaning and structure.</p></article>
+            <article class="card gold"><h3>CSS</h3><p>Visual presentation.</p></article>
+            <article class="card"><h3>JavaScript</h3><p>Behavior and interaction.</p></article>
+          </div>
+          <div class="browser-preview"><div class="browser-bar"></div><div class="browser-body"><h3>Student Club</h3><p>HTML creates this heading. CSS makes it readable. JavaScript can respond when a user clicks.</p></div></div>
+        </div>
+        
+      </section>
 
+      <section class="slide">
+        <div class="slide-header"><p class="kicker">Browser Pipeline</p><h2>How Browsers Render a Page</h2></div>
+        <div class="slide-content">
+          <div class="step-list">
+            <div class="step"><h3>Request</h3><p>Ask for the HTML document.</p></div>
+            <div class="step"><h3>Parse</h3><p>Build the DOM tree.</p></div>
+            <div class="step"><h3>Load</h3><p>Download CSS, images, and JavaScript.</p></div>
+            <div class="step"><h3>Paint</h3><p>Calculate layout and draw pixels.</p></div>
+          </div>
+        </div>
+        
+      </section>
 
-    <section class="slide">
-      <h2>URL Anatomy</h2>
-      <pre><code>https://example.com/students/profile.html</code></pre>
-      <ul>
-        <li><strong>https</strong>: secure protocol</li>
-        <li><strong>example.com</strong>: domain name</li>
-        <li><strong>/students/profile.html</strong>: path to a resource</li>
-      </ul>
-      
-    </section>
-
-
-    <section class="slide">
-      <h2>HTTP and HTTPS</h2>
-      <ul>
-        <li>HTTP is the request-response language browsers and servers use.</li>
-        <li>HTTPS adds encryption and identity checks.</li>
-        <li>Status codes summarize what happened: <code>200</code>, <code>404</code>, <code>500</code>.</li>
-      </ul>
-      
-    </section>
-
-
-    <section class="slide">
-      <h2>Static and Dynamic Websites</h2>
-      <div class="two-col">
-        <div><h3>Static</h3><p>Files are sent mostly as written: HTML, CSS, images, and JavaScript.</p></div>
-        <div><h3>Dynamic</h3><p>Server code or browser code creates changing content based on data or user actions.</p></div>
-      </div>
-      
-    </section>
-
-
-    <section class="slide">
-      <h2>HTML, CSS, and JavaScript</h2>
-      <div class="two-col">
-        <ul><li><strong>HTML</strong>: meaning and structure</li><li><strong>CSS</strong>: visual presentation</li><li><strong>JavaScript</strong>: behavior and interaction</li></ul>
-        <div class="browser-preview"><div class="browser-bar"></div><h3>Student Club</h3><p>HTML creates this heading. CSS makes it readable. JavaScript can respond when a user clicks.</p></div>
-      </div>
-      
-    </section>
-
-
-    <section class="slide">
-      <h2>How Browsers Render a Page</h2>
-      <ol>
-        <li>Request the HTML document.</li>
-        <li>Parse HTML into the DOM tree.</li>
-        <li>Download linked CSS, images, and JavaScript.</li>
-        <li>Calculate layout and paint pixels.</li>
-      </ol>
-      
-    </section>
-
-
-    <section class="slide">
-      <h2>VS Code Project Folder</h2>
-      <pre><code>week01-first-site/
+      <section class="slide">
+        <div class="slide-header"><p class="kicker">Workspace</p><h2>VS Code Project Folder</h2></div>
+        <div class="slide-content code-demo wide-left">
+          <div class="code-card file-tree"><div class="code-label">Folder Structure</div><pre><code>week01-first-site/
 |-- index.html
 `-- images/
-    `-- placeholder.txt</code></pre>
-      <p>One folder per website keeps files predictable.</p>
-      
-    </section>
+    `-- placeholder.txt</code></pre></div>
+          <div class="turn-card"><h3>Why it matters</h3><p>One folder per website keeps files predictable and makes Live Server preview the right project.</p></div>
+        </div>
+        
+      </section>
 
-
-    <section class="slide">
-      <h2>Complete First Website</h2>
-      <pre><code>&lt;!DOCTYPE html&gt;
+      <section class="slide">
+        <div class="slide-header"><p class="kicker">HTML Starter</p><h2>Complete First Website</h2></div>
+        <div class="slide-content code-demo wide-left">
+          <div class="code-card"><div class="code-label">HTML</div><pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
 &lt;head&gt;
   &lt;meta charset="UTF-8"&gt;
@@ -143,133 +152,135 @@
   &lt;h1&gt;My First Website&lt;/h1&gt;
   &lt;p&gt;I am learning how the web works.&lt;/p&gt;
 &lt;/body&gt;
-&lt;/html&gt;</code></pre>
-      
-    </section>
+&lt;/html&gt;</code></pre></div>
+          <div class="browser-preview"><div class="browser-bar"></div><div class="browser-body"><h3>My First Website</h3><p>I am learning how the web works.</p></div></div>
+        </div>
+        
+      </section>
 
-    <section class="slide">
-      <h2>Code Walkthrough</h2>
-      <ul>
-        <li><code>&lt;!DOCTYPE html&gt;</code> tells the browser to use modern HTML.</li>
-        <li><code>&lt;head&gt;</code> contains page information for the browser.</li>
-        <li><code>&lt;body&gt;</code> contains the content students see.</li>
-        <li><code>meta viewport</code> helps the page fit mobile screens.</li>
-      </ul>
-      
-    </section>
+      <section class="slide">
+        <div class="slide-header"><p class="kicker">Walkthrough</p><h2>What Each Part Does</h2></div>
+        <div class="slide-content visual-grid">
+          <article class="card accent"><h3><code>&lt;!DOCTYPE html&gt;</code></h3><p>Tells the browser to use modern HTML.</p></article>
+          <article class="card"><h3><code>&lt;head&gt;</code></h3><p>Contains page information for the browser.</p></article>
+          <article class="card"><h3><code>&lt;body&gt;</code></h3><p>Contains the content students see.</p></article>
+          <article class="card gold"><h3><code>meta viewport</code></h3><p>Helps the page fit mobile screens.</p></article>
+        </div>
+        
+      </section>
 
-    <section class="slide">
-      <h2>Predict the Output</h2>
-      <pre><code>&lt;h1&gt;CS 0135&lt;/h1&gt;
-&lt;p&gt;Web Programming and Design&lt;/p&gt;</code></pre>
-      <details class="callout">
-        <summary>Reveal answer</summary>
-        <p>The browser shows a large heading that says CS 0135, followed by a paragraph that says Web Programming and Design.</p>
-      </details>
-      
-    </section>
+      <section class="slide">
+        <div class="slide-header"><p class="kicker">Predict / Run / Explain</p><h2>Predict the Output</h2></div>
+        <div class="slide-content code-demo">
+          <div class="code-card"><div class="code-label">HTML</div><pre><code>&lt;h1&gt;CS 0135&lt;/h1&gt;
+&lt;p&gt;Web Programming and Design&lt;/p&gt;</code></pre></div>
+          <div class="browser-preview fragment"><div class="browser-bar"></div><div class="browser-body"><h3>CS 0135</h3><p>Web Programming and Design</p></div></div>
+        </div>
+        
+      </section>
 
+      <section class="slide">
+        <div class="slide-header"><p class="kicker">Vocabulary</p><h2>Tag, Element, Attribute</h2></div>
+        <div class="slide-content code-demo wide-left">
+          <div class="code-card"><div class="code-label">HTML</div><pre><code>&lt;p class="intro"&gt;Welcome to CS 0135.&lt;/p&gt;</code></pre></div>
+          <div class="visual-grid">
+            <article class="card"><h3>Tag</h3><p><code>&lt;p&gt;</code> and <code>&lt;/p&gt;</code></p></article>
+            <article class="card"><h3>Element</h3><p>The full paragraph from start tag to end tag.</p></article>
+            <article class="card gold"><h3>Attribute</h3><p><code>class="intro"</code> adds extra information.</p></article>
+          </div>
+        </div>
+        
+      </section>
 
-    <section class="slide">
-      <h2>Tag, Element, Attribute</h2>
-      <pre><code>&lt;p class="intro"&gt;Welcome to CS 0135.&lt;/p&gt;</code></pre>
-      <ul>
-        <li><strong>Tag:</strong> <code>&lt;p&gt;</code> and <code>&lt;/p&gt;</code></li>
-        <li><strong>Element:</strong> the full paragraph from start tag to end tag</li>
-        <li><strong>Attribute:</strong> <code>class="intro"</code> adds extra information</li>
-      </ul>
-      
-    </section>
+      <section class="slide">
+        <div class="slide-header"><p class="kicker">Debug</p><h2>Find the Error</h2></div>
+        <div class="slide-content code-demo">
+          <div class="code-card"><div class="code-label">HTML with a bug</div><pre><code>&lt;h1&gt;About Me&lt;h1&gt;
+&lt;p&gt;My name is Sara.&lt;/p&gt;</code></pre></div>
+          <div class="mistake-card"><h3>Debug prompt</h3><p>What is wrong, and what might the browser do?</p><details class="callout fragment"><summary>Reveal answer</summary><p>The first heading should close with <code>&lt;/h1&gt;</code>. Browsers may repair the DOM, but valid source code is still the goal.</p></details></div>
+        </div>
+        
+      </section>
 
+      <section class="slide">
+        <div class="slide-header"><p class="kicker">DevTools</p><h2>Source vs DOM</h2></div>
+        <div class="slide-content two-col">
+          <article class="card accent"><h3>View Source</h3><p>Shows the original HTML sent to the browser.</p></article>
+          <article class="card gold"><h3>Inspect</h3><p>Shows the live DOM after the browser has parsed and repaired it.</p></article>
+          <article class="card"><h3>Console</h3><p>Reports errors and lets us test small JavaScript commands later.</p></article>
+        </div>
+        
+      </section>
 
-    <section class="slide">
-      <h2>Find the Error</h2>
-      <pre><code>&lt;h1&gt;About Me&lt;h1&gt;
-&lt;p&gt;My name is Sara.&lt;/p&gt;</code></pre>
-      <p class="callout">What is wrong, and what might the browser do?</p>
-      <details class="callout">
-        <summary>Reveal answer</summary>
-        <p>The first heading should close with <code>&lt;/h1&gt;</code>. Browsers may repair the DOM, but valid source code is still the goal.</p>
-      </details>
-      
-    </section>
+      <section class="slide slide--section">
+        <p class="kicker">Your Turn</p>
+        <h2>Build and Inspect</h2>
+        <div class="slide-content">
+          <ol>
+            <li>Create <code>index.html</code>.</li>
+            <li>Add one heading, two paragraphs, and a list of three interests.</li>
+            <li>Open with Live Server.</li>
+            <li>Inspect one element in DevTools.</li>
+          </ol>
+        </div>
+        
+      </section>
 
+      <section class="slide">
+        <div class="slide-header"><p class="kicker">Professional Habit</p><h2>Accessibility Starts Today</h2></div>
+        <div class="slide-content visual-grid">
+          <article class="card accent"><h3>Headings</h3><p>Use meaningful headings in order.</p></article>
+          <article class="card"><h3>Links</h3><p>Write link text that explains the destination.</p></article>
+          <article class="card"><h3>Color</h3><p>Do not rely on color alone to communicate meaning.</p></article>
+          <article class="card gold"><h3>Keyboard</h3><p>Test with keyboard navigation.</p></article>
+        </div>
+        
+      </section>
 
-    <section class="slide">
-      <h2>DevTools: Source vs DOM</h2>
-      <ul>
-        <li><strong>View Source</strong> shows the original HTML sent to the browser.</li>
-        <li><strong>Inspect</strong> shows the live DOM after the browser has parsed and repaired it.</li>
-        <li>The Console reports errors and lets us test small JavaScript commands later.</li>
-      </ul>
-      
-    </section>
+      <section class="slide">
+        <div class="slide-header"><p class="kicker">Debugging</p><h2>Common Mistakes</h2></div>
+        <div class="slide-content visual-grid">
+          <article class="mistake-card"><p>Editing one file but previewing a different folder.</p></article>
+          <article class="mistake-card"><p>Forgetting to save before refreshing the browser.</p></article>
+          <article class="mistake-card"><p>Using opening tags where closing tags are needed.</p></article>
+          <article class="mistake-card"><p>Naming the home page <code>Index.html</code> or <code>index.html.txt</code>.</p></article>
+        </div>
+        
+      </section>
 
+      <section class="slide slide--center">
+        <p class="kicker">Exit Ticket</p>
+        <h2>Before You Leave</h2>
+        <div class="slide-content">
+          <ol class="agenda-list">
+            <li>In one sentence, explain what a browser requests from a server.</li>
+            <li>Name one difference between HTML and CSS.</li>
+            <li>Write one debugging question you still have.</li>
+          </ol>
+        </div>
+        
+      </section>
 
-    <section class="slide">
-      <h2>Your Turn</h2>
-      <ol>
-        <li>Create <code>index.html</code>.</li>
-        <li>Add one heading, two paragraphs, and a list of three interests.</li>
-        <li>Open with Live Server.</li>
-        <li>Inspect one element in DevTools.</li>
-      </ol>
-      
-    </section>
+      <section class="slide slide--section">
+        <p class="kicker">Next Week</p>
+        <h2>HTML Foundations</h2>
+        <p class="lede">We will build a multi-section personal profile page using semantic HTML, links, images, tables, and a small form.</p>
+        
+      </section>
 
-
-    <section class="slide">
-      <h2>Accessibility Starts Today</h2>
-      <ul>
-        <li>Use meaningful headings in order.</li>
-        <li>Write link text that explains the destination.</li>
-        <li>Do not rely on color alone to communicate meaning.</li>
-        <li>Test with keyboard navigation.</li>
-      </ul>
-      
-    </section>
-
-    <section class="slide">
-      <h2>Common Mistakes</h2>
-      <ul>
-        <li>Editing one file but previewing a different folder.</li>
-        <li>Forgetting to save before refreshing the browser.</li>
-        <li>Using opening tags where closing tags are needed.</li>
-        <li>Naming the home page <code>Index.html</code> or <code>index.html.txt</code>.</li>
-      </ul>
-      
-    </section>
-
-
-    <section class="slide">
-      <h2>Exit Ticket</h2>
-      <ol>
-        <li>In one sentence, explain what a browser requests from a server.</li>
-        <li>Name one difference between HTML and CSS.</li>
-        <li>Write one debugging question you still have.</li>
-      </ol>
-      
-    </section>
-
-
-    <section class="slide">
-      <h2>Next Week</h2>
-      <p>We will build a multi-section personal profile page using semantic HTML, links, images, tables, and a small form.</p>
-      
-    </section>
-
-            </div>
-            <div class="controls" aria-label="Slide controls">
-              <a class="home-link" href="../../../index.html">Course Home</a>
-              <div class="slide-status">
-                <div>Week 1 - <span data-current-slide>1</span>/<span data-total-slides></span></div>
-                <div class="progress-track" aria-hidden="true"><span data-progress-bar></span></div>
-              </div>
-              <div class="control-buttons">
-                <button type="button" data-prev aria-label="Previous slide">Prev</button>
-                <button type="button" data-next aria-label="Next slide">Next</button>
-              </div>
-            </div>
-          </main>
-        </body>
-        </html>
+    </div>
+    <div class="controls" aria-label="Slide controls">
+      <a class="home-link" href="../../../index.html">Course Home</a>
+      <div class="slide-status">
+        <div>Week 1 - <span data-current-slide>1</span>/<span data-total-slides></span></div>
+        <div class="progress-track" aria-hidden="true"><span data-progress-bar></span></div>
+      </div>
+      <div class="control-buttons">
+        <button type="button" data-prev aria-label="Previous slide">Prev</button>
+        <button type="button" data-next aria-label="Next slide">Next</button>
+        
+      </div>
+    </div>
+  </main>
+</body>
+</html>

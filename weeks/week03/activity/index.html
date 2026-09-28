@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Week 3 Activity</title>
+  <link rel="stylesheet" href="../../../assets/css/site.css">
+</head>
+<body>
+  <main class="page-shell">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="../../../index.html">Course Home</a>
+      <span>/</span>
+      <a href="../index.html">Week 3</a>
+      <span>/</span>
+      <span>Activity</span>
+    </nav>
+    <p class="eyebrow">Week 3 Activity</p>
+    <h1 class="page-title">Read, Predict, and Debug CSS</h1>
+    <p class="lede">Practice CSS rule anatomy, selectors, cascade reasoning, contrast, and DevTools habits.</p>
+    <div class="control-panel">
+      <a class="button" href="../index.html">Return to Week</a>
+      <a class="button" href="../../../index.html">Return to Course Home</a>
+    </div>
+    <section class="instruction-section">
+      <h2>Part 1: Label the CSS Rule</h2>
+      <p class='student-task'>Identify the selector, property, and value in this rule.</p><pre><code>h1 {
+  color: #006b5f;
+  font-size: 2.5rem;
+}</code></pre><details><summary>Self-check</summary><p><code>h1</code> is the selector. <code>color</code> and <code>font-size</code> are properties. <code>#006b5f</code> and <code>2.5rem</code> are values.</p></details>
+    </section><section class="instruction-section">
+      <h2>Part 2: Match Selectors to Elements</h2>
+      <ol><li><code>.card</code></li><li><code>#course-title</code></li><li><code>nav a</code></li><li><code>main &gt; section</code></li></ol><p>Match each selector to a likely HTML target.</p><details><summary>Self-check</summary><p>Class card, unique element with that ID, links inside nav, and section elements that are direct children of main.</p></details>
+    </section><section class="instruction-section">
+      <h2>Part 3: Predict the Winner</h2>
+      <pre><code>p { color: black; }
+.note { color: teal; }
+p { color: maroon; }</code></pre><p class='student-task'>What color is <code>&lt;p class=&quot;note&quot;&gt;</code>?</p><details><summary>Self-check</summary><p><code>teal</code>, because the class selector is more specific than the element selectors.</p></details>
+    </section><section class="instruction-section">
+      <h2>Part 4: Correct the Stylesheet Link</h2>
+      <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;</code></pre><p>The real file is named <code>styles.css</code>.</p><details><summary>Self-check</summary><pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;</code></pre></details>
+    </section><section class="instruction-section">
+      <h2>Part 5: Improve Contrast</h2>
+      <p class='student-task'>A paragraph uses pale green text on a pale background. Choose a darker text color and explain why.</p><details><summary>Self-check</summary><p>A dark color such as <code>#10231f</code> on a light background improves readability and accessibility.</p></details>
+    </section><section class="instruction-section">
+      <h2>Part 6: DevTools Inspection</h2>
+      <ol><li>Open any Week 3 starter page.</li><li>Inspect the main heading.</li><li>Temporarily change its color.</li><li>Copy the useful change into <code>styles.css</code>.</li></ol><details><summary>Self-check</summary><p>The Styles panel should show which selector set the heading color and whether any rules were crossed out.</p></details>
+    </section>
+  </main>
+</body>
+</html>

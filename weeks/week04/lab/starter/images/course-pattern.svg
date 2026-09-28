@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-labelledby="title desc">
+  <title id="title">Course project preview</title>
+  <desc id="desc">Abstract website panels for a responsive homepage.</desc>
+  <rect width="800" height="420" fill="#eef4f1"/>
+  <rect x="70" y="62" width="660" height="296" rx="18" fill="#fff" stroke="#d7dfdc" stroke-width="4"/>
+  <rect x="110" y="105" width="250" height="32" fill="#007c6c"/>
+  <rect x="110" y="160" width="580" height="22" fill="#b78b20" opacity=".75"/>
+  <rect x="110" y="215" width="160" height="92" fill="#e7f3ef" stroke="#007c6c"/>
+  <rect x="320" y="215" width="160" height="92" fill="#fff6dd" stroke="#b78b20"/>
+  <rect x="530" y="215" width="160" height="92" fill="#f2f6f3" stroke="#d7dfdc"/>
+</svg>

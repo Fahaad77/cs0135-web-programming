@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Week 5 Slides</title>
+  <link rel="stylesheet" href="../../../assets/css/slides.css">
+  <script src="../../../assets/js/slides.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#slides">Skip to slides</a>
+  <main class="deck-shell" aria-label="Week 5 Slides">
+    <div id="slides" class="slide-frame">
+<section class="slide slide--cover"><p class="kicker">Week 5 - CS 0135</p><h1>XML and JSON in Practice</h1><p class="lede">Represent the same small dataset in XML and JSON, then choose the format that fits the web task.</p></section>
+
+<section class="slide"><p class="kicker">Opening question</p><h2>How Should a Website Store a Catalog?</h2><div class="two-col"><div class="card accent"><h3>XML</h3><p>Custom tags, strict nesting, document-style data.</p></div><div class="card gold"><h3>JSON</h3><p>Objects and arrays, common for modern APIs.</p></div></div></section>
+
+<section class="slide"><p class="kicker">Learning outcomes</p><h2>By the End You Can</h2><ul><li>Create well-formed XML with one root, proper nesting, quoted attributes, and closing tags.</li><li>Explain well-formed versus valid, schemas, and namespaces at an introductory level.</li><li>Write JSON objects and arrays using valid syntax.</li><li>Convert a small record between XML and JSON.</li></ul></section>
+
+<section class="slide"><p class="kicker">Roadmap</p><h2>Data Formats Today</h2><ol class="agenda-list"><li>XML purpose</li><li>Well-formed rules</li><li>Attributes, entities, namespaces</li><li>Schema concepts</li><li>JSON syntax</li><li>Conversion practice</li></ol></section>
+
+<section class="slide slide--section"><p class="kicker">Part 1</p><h2>XML Describes Custom Data</h2><p class="lede">XML defines tag sets for data, documents, configuration, feeds, SVG, and enterprise systems.</p></section>
+
+<section class="slide"><p class="kicker">HTML vs XML</p><h2>Same Angle Brackets, Different Purpose</h2><div class="two-col"><div class="card"><h3>HTML</h3><p>Known elements such as <code>h1</code>, <code>p</code>, and <code>nav</code> describe web page structure.</p></div><div class="card accent"><h3>XML</h3><p>You define meaningful tags such as <code>course</code>, <code>title</code>, and <code>hours</code>.</p></div></div></section>
+
+<section class="slide"><p class="kicker">Course catalog</p><h2>Small XML Dataset</h2><div class="code-card"><div class="code-label"><span>XML</span><span>catalog.xml</span></div><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;courses&gt;
+  &lt;course id=&quot;CS0135&quot;&gt;
+    &lt;title&gt;Web Programming and Design&lt;/title&gt;
+    &lt;hours&gt;3&lt;/hours&gt;
+    &lt;active&gt;true&lt;/active&gt;
+  &lt;/course&gt;
+&lt;/courses&gt;</code></pre></div></section>
+
+<section class="slide"><p class="kicker">Syntax labels</p><h2>XML Parts</h2><div class="visual-grid"><div class="card accent"><h3>Declaration</h3><p><code>&lt;?xml version="1.0"?&gt;</code></p></div><div class="card"><h3>Root</h3><p><code>&lt;courses&gt;</code></p></div><div class="card gold"><h3>Element</h3><p><code>&lt;title&gt;...&lt;/title&gt;</code></p></div><div class="card"><h3>Attribute</h3><p><code>id="CS0135"</code></p></div></div></section>
+
+<section class="slide"><p class="kicker">Well-formed XML</p><h2>Rules the Parser Requires</h2><ul><li>Exactly one root element.</li><li>Opening and closing tags match.</li><li>Elements are properly nested.</li><li>Names are case-sensitive.</li><li>Attribute values are quoted.</li><li>Empty elements may use <code>&lt;tag /&gt;</code>.</li></ul></section>
+
+<section class="slide"><p class="kicker">Common errors</p><h2>Find the XML Problems</h2><div class="code-card"><div class="code-label"><span>XML</span><span>broken</span></div><pre><code>&lt;courses&gt;
+  &lt;course id=CS0135&gt;
+    &lt;title&gt;Web Programming&lt;/name&gt;
+    &lt;hours&gt;3&lt;/hours&gt;
+  &lt;/course&gt;
+&lt;/catalog&gt;</code></pre></div><details class="callout"><summary>Reveal</summary><p>Attribute value needs quotes, <code>title</code> closes as <code>name</code>, and root closes as <code>catalog</code>.</p></details></section>
+
+<section class="slide"><p class="kicker">Elements or attributes?</p><h2>Modeling Choice</h2><div class="two-col"><div class="card gold"><h3>Attribute</h3><p>Best for IDs, categories, or small metadata: <code>id="CS0135"</code>.</p></div><div class="card accent"><h3>Element</h3><p>Best for content that may grow or need structure: <code>&lt;title&gt;</code>.</p></div></div></section>
+
+<section class="slide"><p class="kicker">Entities and CDATA</p><h2>Reserved Characters</h2><div class="code-card"><div class="code-label"><span>XML</span><span>text safety</span></div><pre><code>&lt;note&gt;Use &amp;lt;strong&amp;gt; in HTML examples.&lt;/note&gt;
+&lt;example&gt;&lt;![CDATA[if (score &gt; 90) { pass(); }]]&gt;&lt;/example&gt;</code></pre></div><p class="callout">Entities encode reserved characters. CDATA preserves text that should not be parsed as XML markup.</p></section>
+
+<section class="slide"><p class="kicker">Namespaces</p><h2>Avoid Naming Collisions</h2><div class="code-card"><div class="code-label"><span>XML</span><span>prefixes</span></div><pre><code>&lt;catalog xmlns:web=&quot;https://example.edu/web&quot; xmlns:book=&quot;https://example.edu/books&quot;&gt;
+  &lt;web:title&gt;Portfolio Website&lt;/web:title&gt;
+  &lt;book:title&gt;HTML Reference&lt;/book:title&gt;
+&lt;/catalog&gt;</code></pre></div></section>
+
+<section class="slide"><p class="kicker">Well-formed vs valid</p><h2>Two Quality Levels</h2><div class="two-col"><div class="card accent"><h3>Well-formed</h3><p>Follows XML syntax rules.</p></div><div class="card gold"><h3>Valid</h3><p>Also follows a declared schema such as XSD.</p></div></div></section>
+
+<section class="slide"><p class="kicker">Schemas</p><h2>XSD in One Minute</h2><div class="callout"><p>An XML Schema Definition can state which elements are allowed, where they appear, and what data types they contain. DTDs are older historical context; XSD is the modern concept to recognize.</p></div></section>
+
+<section class="slide"><p class="kicker">Tiny schema idea</p><h2>Simple XSD Shape</h2><div class="code-card"><div class="code-label"><span>XSD</span><span>conceptual</span></div><pre><code>&lt;xsd:element name=&quot;hours&quot; type=&quot;xsd:integer&quot; /&gt;
+&lt;xsd:element name=&quot;active&quot; type=&quot;xsd:boolean&quot; /&gt;</code></pre></div><p class="callout">You do not need to memorize long schema documents this week.</p></section>
+
+<section class="slide"><p class="kicker">Browser display</p><h2>Raw XML Is Developer-Facing</h2><div class="browser-preview"><div class="browser-bar"></div><div class="browser-body"><p>Browsers usually show XML as a collapsible tree or plain structured text because custom tags have no built-in visual meaning.</p></div></div></section>
+
+<section class="slide"><p class="kicker">Styling and transforms</p><h2>CSS and XSLT Overview</h2><div class="two-col"><div class="card"><h3>CSS for XML</h3><p>Can display custom elements, but this is mostly a demonstration technique.</p></div><div class="card accent"><h3>XSLT</h3><p>Transforms XML into another format such as HTML using template rules.</p></div></div></section>
+
+<section class="slide"><p class="kicker">Processors</p><h2>DOM Versus SAX</h2><div class="two-col"><div class="card gold"><h3>DOM</h3><p>Builds a tree in memory. Easier to navigate, heavier for huge files.</p></div><div class="card"><h3>SAX</h3><p>Reads as events. Efficient for large streams, harder for random access.</p></div></div></section>
+
+<section class="slide"><p class="kicker">Enterprise context</p><h2>SOAP and WSDL</h2><p class="callout">SOAP and WSDL are XML-based web service technologies still seen in enterprise systems. Modern beginner web APIs more commonly use JSON.</p></section>
+
+<section class="slide slide--section"><p class="kicker">Part 2</p><h2>JSON Represents Data for Modern Web APIs</h2><p class="lede">JSON is compact, strict, and easy for JavaScript applications to read.</p></section>
+
+<section class="slide"><p class="kicker">Same data</p><h2>Course Catalog as JSON</h2><div class="code-card"><div class="code-label"><span>JSON</span><span>catalog.json</span></div><pre><code>{
+  &quot;courses&quot;: [
+    {
+      &quot;id&quot;: &quot;CS0135&quot;,
+      &quot;title&quot;: &quot;Web Programming and Design&quot;,
+      &quot;hours&quot;: 3,
+      &quot;active&quot;: true
+    }
+  ]
+}</code></pre></div></section>
+
+<section class="slide"><p class="kicker">JSON parts</p><h2>Objects, Arrays, Values</h2><div class="visual-grid"><div class="card accent"><h3>Object</h3><p><code>{ "key": value }</code></p></div><div class="card gold"><h3>Array</h3><p><code>[ item, item ]</code></p></div><div class="card"><h3>String</h3><p><code>"text"</code></p></div><div class="card"><h3>Other values</h3><p>Numbers, booleans, <code>null</code>.</p></div></div></section>
+
+<section class="slide"><p class="kicker">Valid JSON</p><h2>Strict Syntax Rules</h2><ul><li>Keys must use double quotes.</li><li>String values must use double quotes.</li><li>No comments in standard JSON.</li><li>No trailing commas.</li><li>Objects and arrays must close correctly.</li></ul></section>
+
+<section class="slide"><p class="kicker">Common JSON errors</p><h2>Fix This Object</h2><div class="code-card"><div class="code-label"><span>JSON</span><span>broken</span></div><pre><code>{
+  id: &quot;CS0135&quot;,
+  &quot;title&quot;: &quot;Web Programming&quot;,
+  &quot;hours&quot;: 3,
+}</code></pre></div><details class="callout"><summary>Reveal</summary><p>Quote <code>id</code> and remove the trailing comma after <code>3</code>.</p></details></section>
+
+<section class="slide"><p class="kicker">JSON vs JavaScript object</p><h2>They Look Similar, Not Identical</h2><div class="two-col"><div class="card accent"><h3>JSON</h3><p>Data text format. Double-quoted keys and strings.</p></div><div class="card"><h3>Object literal</h3><p>JavaScript syntax. Can allow unquoted keys and expressions.</p></div></div></section>
+
+<section class="slide"><p class="kicker">Side by side</p><h2>XML Versus JSON</h2><div class="two-col"><div class="card"><h3>XML</h3><p>Verbose, supports attributes, namespaces, document workflows, and schemas.</p></div><div class="card gold"><h3>JSON</h3><p>Compact, maps naturally to JavaScript, common for APIs and AJAX.</p></div></div></section>
+
+<section class="slide"><p class="kicker">Conversion exercise</p><h2>One Product, Two Formats</h2><div class="turn-card"><p>Convert a product with <code>id</code>, <code>name</code>, <code>price</code>, and <code>available</code> from XML into JSON.</p></div></section>
+
+<section class="slide"><p class="kicker">Guided practice</p><h2>Validate Before You Trust</h2><ol class="step-list"><li class="step">Open XML in browser/editor</li><li class="step">Check one root</li><li class="step">Validate JSON syntax</li><li class="step">Compare field names</li></ol></section>
+
+<section class="slide"><p class="kicker">Project connection</p><h2>Week 5 Milestone</h2><ul><li>Create a project data file named <code>data.json</code>.</li><li>Include at least five objects.</li><li>Use realistic fields for services, products, courses, team members, or portfolio projects.</li><li>Keep it ready for later JavaScript/AJAX use.</li></ul></section>
+
+<section class="slide"><p class="kicker">Recap</p><h2>Choose the Format for the Job</h2><div class="visual-grid three"><div class="card accent"><h3>XML</h3><p>Strict custom markup and document ecosystems.</p></div><div class="card gold"><h3>JSON</h3><p>Modern API data and JavaScript-friendly structures.</p></div><div class="card"><h3>Skill</h3><p>Read, validate, compare, and convert.</p></div></div><p class="callout">Exit question: when would JSON be a better fit than XML for your project?</p></section>
+
+    </div>
+    <div class="controls" aria-label="Slide controls">
+      <a class="home-link" href="../../../index.html">Course Home</a>
+      <div class="slide-status">
+        <div>Week 5 - <span data-current-slide>1</span>/<span data-total-slides></span></div>
+        <div class="progress-track" aria-hidden="true"><span data-progress-bar></span></div>
+      </div>
+      <div class="control-buttons">
+        <button type="button" data-prev aria-label="Previous slide">Prev</button>
+        <button type="button" data-next aria-label="Next slide">Next</button>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

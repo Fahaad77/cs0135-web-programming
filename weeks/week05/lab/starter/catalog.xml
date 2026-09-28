@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog>
+  <item id="item-1">
+    <name>Example Item</name>
+    <category>starter</category>
+    <description>Replace this record with your own data.</description>
+    <available>true</available>
+  </item>
+</catalog>

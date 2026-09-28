@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Week 3 Slides</title>
+  <link rel="stylesheet" href="../../../assets/css/slides.css">
+  <script src="../../../assets/js/slides.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#slides">Skip to slides</a>
+  <main class="deck-shell" aria-label="Week 3 Slides">
+    <div id="slides" class="slide-frame">
+<section class="slide slide--cover"><p class="kicker">Week 3 - CS 0135</p><h1>CSS Fundamentals</h1><p class="lede">Move from plain HTML to consistent visual design with external stylesheets, selectors, colors, typography, and the cascade.</p></section>
+
+<section class="slide"><p class="kicker">Opening question</p><h2>Same HTML, Different Feeling</h2><div class="visual-grid three"><div class="card"><h3>Plain</h3><p>Readable, but no visual hierarchy.</p></div><div class="card accent"><h3>Course</h3><p>Clear headings, spacing, color, and focus states.</p></div><div class="card gold"><h3>Broken</h3><p>Low contrast and random spacing make the page harder to use.</p></div></div><p class="callout">What changed: the structure stayed HTML; presentation moved to CSS.</p></section>
+
+<section class="slide"><p class="kicker">Learning outcomes</p><h2>By the End You Can</h2><ul><li>Write valid CSS rules and connect <code>styles.css</code>.</li><li>Use element, class, ID, grouping, descendant, child, universal, <code>:hover</code>, and <code>:focus</code> selectors.</li><li>Explain cascade, specificity, inheritance, and source order at an introductory level.</li><li>Apply readable typography, colors, spacing, and DevTools inspection.</li></ul></section>
+
+<section class="slide"><p class="kicker">Roadmap</p><h2>Today We Style a Profile</h2><ol class="agenda-list"><li>Why CSS exists</li><li>Rule anatomy</li><li>Three ways to add CSS</li><li>Selectors</li><li>Cascade and inheritance</li><li>Typography, colors, and DevTools</li></ol></section>
+
+<section class="slide slide--section"><p class="kicker">Part 1</p><h2>CSS Separates Structure from Presentation</h2><p class="lede">HTML says what content means. CSS says how that content should appear.</p></section>
+
+<section class="slide"><p class="kicker">Concept model</p><h2>Two Files, One Page</h2><div class="flow"><div class="node dark">index.html<br><span class="small">content</span></div><div class="arrow">+</div><div class="node gold">styles.css<br><span class="small">presentation</span></div><div class="arrow">=</div><div class="node">browser result</div></div><p class="callout">This mirrors the beginner examples in W3Schools, but our course default is external CSS for maintainability.</p></section>
+
+<section class="slide"><p class="kicker">Folder structure</p><h2>Week 3 Demo</h2><div class="code-demo wide-left"><div class="terminal-card"><div class="terminal-label">Files</div><pre><code>week03-demo/
+|-- index.html
+`-- styles.css</code></pre></div><div class="card accent"><h3>Goal</h3><p>Style a student profile page without mixing presentation into the HTML content.</p></div></div></section>
+
+<section class="slide"><p class="kicker">Connect CSS</p><h2>External Stylesheet Link</h2><div class="code-demo wide-left"><div class="code-card"><div class="code-label"><span>HTML</span><span>index.html</span></div><pre><code>&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;Student Profile&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;
+&lt;/head&gt;</code></pre></div><div class="browser-preview"><div class="browser-bar"></div><div class="browser-body"><p><strong>Important:</strong> the path starts beside <code>index.html</code>.</p><p><code>type="text/css"</code> is no longer required in modern HTML.</p></div></div></div></section>
+
+<section class="slide"><p class="kicker">Rule anatomy</p><h2>Selector + Declaration Block</h2><div class="code-demo"><div class="code-card"><div class="code-label"><span>CSS</span><span>styles.css</span></div><pre><code>h1 {
+  color: #006b5f;
+  font-size: 2.5rem;
+}</code></pre></div><div class="diagram"><div class="visual-grid three"><div class="card accent"><h3><code>h1</code></h3><p>Selector</p></div><div class="card"><h3><code>color</code></h3><p>Property</p></div><div class="card gold"><h3><code>#006b5f</code></h3><p>Value</p></div></div></div></div></section>
+
+<section class="slide"><p class="kicker">Starter CSS</p><h2>Readable Defaults</h2><div class="code-card"><div class="code-label"><span>CSS</span><span>body and headings</span></div><pre><code>body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #17202a;
+  background-color: #f4f7f9;
+}
+
+h1 {
+  color: #006b5f;
+}</code></pre></div></section>
+
+<section class="slide"><p class="kicker">CSS locations</p><h2>Inline, Internal, External</h2><div class="visual-grid three"><div class="card"><h3>Inline</h3><p>Inside a single <code>style</code> attribute. Quick, but hard to maintain.</p></div><div class="card"><h3>Internal</h3><p>Inside <code>&lt;style&gt;</code> in one HTML file. Useful for tiny demos.</p></div><div class="card accent"><h3>External</h3><p>Separate <code>.css</code> file linked from HTML. Course default.</p></div></div></section>
+
+<section class="slide"><p class="kicker">Modern correction</p><h2>Priority Is Not Just Location</h2><div class="diagram"><ol class="step-list"><li class="step">Importance</li><li class="step">Specificity</li><li class="step">Source order</li><li class="step">Inheritance/defaults</li></ol></div><p class="callout">Inline rules often win because they have high specificity, but the cascade is more than inline &gt; internal &gt; external.</p></section>
+
+<section class="slide"><p class="kicker">Selectors</p><h2>Element Selectors</h2><div class="code-demo"><div class="code-card"><div class="code-label"><span>CSS</span><span>all matching elements</span></div><pre><code>p {
+  color: #30423f;
+}
+
+a {
+  color: #005f53;
+}</code></pre></div><div class="browser-preview"><div class="browser-bar"></div><div class="browser-body"><p>Every paragraph gets this text color.</p><p><a href="#">Every link gets this link color.</a></p></div></div></div></section>
+
+<section class="slide"><p class="kicker">Selectors</p><h2>Reusable Classes</h2><div class="code-demo wide-left"><div class="code-card"><div class="code-label"><span>HTML + CSS</span><span>class</span></div><pre><code>&lt;section class=&quot;card highlight&quot;&gt;...&lt;/section&gt;
+
+.card {
+  background-color: white;
+  padding: 1rem;
+}
+
+.highlight {
+  border-left: 6px solid #007c6c;
+}</code></pre></div><div class="card accent"><h3>Class rule</h3><p>Use classes for patterns that repeat, such as cards, warnings, buttons, and badges.</p></div></div></section>
+
+<section class="slide"><p class="kicker">Selectors</p><h2>One ID, Used Carefully</h2><div class="code-demo"><div class="code-card"><div class="code-label"><span>CSS</span><span>ID selector</span></div><pre><code>#course-title {
+  letter-spacing: 0.04em;
+}</code></pre></div><div class="card gold"><h3>Course guidance</h3><p>An ID must be unique. Prefer classes for visual styling unless one unique target is truly needed.</p></div></div></section>
+
+<section class="slide"><p class="kicker">Grouping</p><h2>One Rule, Many Selectors</h2><div class="code-card"><div class="code-label"><span>CSS</span><span>grouped selectors</span></div><pre><code>h1,
+h2,
+h3 {
+  line-height: 1.1;
+  color: #10231f;
+}</code></pre></div><p class="callout">Grouping reduces repetition and keeps headings consistent.</p></section>
+
+<section class="slide"><p class="kicker">Relationships</p><h2>Descendant Versus Child</h2><div class="two-col"><div class="card accent"><h3><code>.profile a</code></h3><p>Any link inside <code>.profile</code>, even if deeply nested.</p></div><div class="card gold"><h3><code>.profile &gt; a</code></h3><p>Only direct child links one level below <code>.profile</code>.</p></div></div><div class="code-card"><pre><code>.profile a { color: #005f53; }
+.profile &gt; a { font-weight: bold; }</code></pre></div></section>
+
+<section class="slide"><p class="kicker">Universal selector</p><h2>Useful, But Broad</h2><div class="code-demo"><div class="code-card"><div class="code-label"><span>CSS</span><span>common reset</span></div><pre><code>* {
+  box-sizing: border-box;
+}</code></pre></div><div class="card"><h3>Meaning</h3><p>The universal selector targets every element. Use it for intentional global defaults, not random styling.</p></div></div></section>
+
+<section class="slide"><p class="kicker">Interaction</p><h2><code>:hover</code> and <code>:focus</code></h2><div class="code-demo wide-left"><div class="code-card"><div class="code-label"><span>CSS</span><span>mouse and keyboard</span></div><pre><code>a:hover {
+  color: #00483f;
+}
+
+a:focus {
+  outline: 3px solid #b78b20;
+  outline-offset: 3px;
+}</code></pre></div><div class="card accent"><h3>Accessibility habit</h3><p>Hover helps mouse users. Focus helps keyboard users know where they are.</p></div></div></section>
+
+<section class="slide"><p class="kicker">Inheritance</p><h2>Some Values Flow Down</h2><div class="flow"><div class="node dark">body<br>font-family</div><div class="arrow">↓</div><div class="node">main</div><div class="arrow">↓</div><div class="node gold">p</div></div><p class="callout">Text properties often inherit. Layout properties like margin, padding, and border usually do not.</p></section>
+
+<section class="slide"><p class="kicker">Specificity</p><h2>Which Rule Wins?</h2><div class="code-demo wide-left"><div class="code-card"><div class="code-label"><span>CSS</span><span>predict</span></div><pre><code>p { color: black; }
+.note { color: teal; }
+#summary { color: maroon; }</code></pre></div><div class="card gold"><h3>Prediction</h3><p>For <code>&lt;p id="summary" class="note"&gt;</code>, the ID selector wins unless a later rule has higher cascade power.</p></div></div></section>
+
+<section class="slide"><p class="kicker">Source order</p><h2>When Specificity Ties</h2><div class="code-card"><div class="code-label"><span>CSS</span><span>later wins</span></div><pre><code>.card { background-color: white; }
+.card { background-color: #eef4f1; }</code></pre></div><p class="callout">Both selectors have the same specificity, so the later rule wins.</p></section>
+
+<section class="slide"><p class="kicker">Typography</p><h2>Readable Text Choices</h2><div class="code-card"><div class="code-label"><span>CSS</span><span>font stack</span></div><pre><code>body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.lede {
+  font-weight: 700;
+  font-style: normal;
+  text-align: left;
+}</code></pre></div></section>
+
+<section class="slide"><p class="kicker">Text details</p><h2>Decoration and Spacing</h2><div class="code-demo"><div class="code-card"><div class="code-label"><span>CSS</span><span>links and headings</span></div><pre><code>a {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+h1 {
+  letter-spacing: 0.04em;
+}</code></pre></div><div class="card"><h3>Careful</h3><p>Do not remove link underlines unless another clear visual cue remains.</p></div></div></section>
+
+<section class="slide"><p class="kicker">Color formats</p><h2>Named, HEX, RGB, HSL</h2><div class="visual-grid"><div class="card"><h3><code>teal</code></h3><p>Named color, quick demos.</p></div><div class="card accent"><h3><code>#007c6c</code></h3><p>HEX, common in style guides.</p></div><div class="card"><h3><code>rgb(0, 124, 108)</code></h3><p>Red, green, blue channels.</p></div><div class="card gold"><h3><code>hsl(172, 100%, 24%)</code></h3><p>Hue, saturation, lightness.</p></div></div></section>
+
+<section class="slide"><p class="kicker">Contrast</p><h2>Color Must Be Readable</h2><div class="two-col"><div class="mistake-card"><h3>Hard to read</h3><p style="color:#8db3aa">Light green text on a pale background reduces readability.</p></div><div class="card accent"><h3>Better</h3><p style="color:#10231f">Dark text on a light background is easier for more students.</p></div></div><p class="callout">Check contrast before choosing a palette for the project style guide.</p></section>
+
+<section class="slide"><p class="kicker">DevTools</p><h2>Inspect Before Guessing</h2><ol class="step-list"><li class="step">Right-click an element</li><li class="step">Inspect</li><li class="step">Read Styles panel</li><li class="step">Toggle or edit temporarily</li></ol><p class="callout">DevTools changes are temporary. Copy good fixes back into <code>styles.css</code>.</p></section>
+
+<section class="slide"><p class="kicker">Common mistake</p><h2>Broken Stylesheet Link</h2><div class="code-demo"><div class="mistake-card"><pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;</code></pre></div><div class="card accent"><h3>Fix</h3><p>If the file is named <code>styles.css</code>, the link must say <code>href="styles.css"</code>.</p></div></div></section>
+
+<section class="slide"><p class="kicker">Guided practice</p><h2>Style a Profile Card</h2><div class="code-card"><div class="code-label"><span>CSS</span><span>student task</span></div><pre><code>.profile-card {
+  background-color: white;
+  padding: 1rem;
+  border-left: 6px solid #007c6c;
+}
+
+.profile-card a:focus {
+  outline: 3px solid #b78b20;
+}</code></pre></div></section>
+
+<section class="slide"><p class="kicker">Project connection</p><h2>Week 3 Milestone</h2><div class="turn-card"><ul><li>Choose a color palette with accessible contrast.</li><li>Choose heading and body font stacks.</li><li>Define spacing conventions.</li><li>Design button/link states.</li><li>Create two reusable component classes.</li></ul></div></section>
+
+<section class="slide"><p class="kicker">Recap</p><h2>CSS Gives HTML a System</h2><div class="visual-grid three"><div class="card accent"><h3>Rules</h3><p>Selector plus declarations.</p></div><div class="card gold"><h3>Cascade</h3><p>Conflicts resolve by cascade rules.</p></div><div class="card"><h3>Practice</h3><p>Use external CSS and DevTools.</p></div></div><p class="callout">Exit question: which selector would you use for a reusable warning box, and why?</p></section>
+
+    </div>
+    <div class="controls" aria-label="Slide controls">
+      <a class="home-link" href="../../../index.html">Course Home</a>
+      <div class="slide-status">
+        <div>Week 3 - <span data-current-slide>1</span>/<span data-total-slides></span></div>
+        <div class="progress-track" aria-hidden="true"><span data-progress-bar></span></div>
+      </div>
+      <div class="control-buttons">
+        <button type="button" data-prev aria-label="Previous slide">Prev</button>
+        <button type="button" data-next aria-label="Next slide">Next</button>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

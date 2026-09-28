@@ -1,0 +1,5 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: #17202a; background: #f4f7f9; }
+.page { width: min(90%, 1100px); margin-inline: auto; }
+img { max-width: 100%; height: auto; }
+/* Add your responsive layout CSS below. */

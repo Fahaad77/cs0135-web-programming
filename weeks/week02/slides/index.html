@@ -1,26 +1,53 @@
 <!DOCTYPE html>
-        <html lang="en">
-        <head>
-          <meta charset="utf-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1">
-          <title>Week 2 Slides</title>
-          <link rel="stylesheet" href="../../../assets/css/slides.css">
-          <script src="../../../assets/js/slides.js" defer></script>
-        </head>
-        <body>
-          <a class="skip-link" href="#slides">Skip to slides</a>
-          <main class="deck-shell" aria-label="Week 2 Slides">
-            <div id="slides" class="slide-frame">
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Week 2 Slides</title>
+  <link rel="stylesheet" href="../../../assets/css/slides.css">
+  <script src="../../../assets/js/slides.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#slides">Skip to slides</a>
+  <main class="deck-shell" aria-label="Week 2 Slides">
+    <div id="slides" class="slide-frame">
 
-    <section class="slide slide--cover"><p class="kicker">Week 2 - CS 0135</p><h1>HTML Foundations</h1><p>Build a semantic personal profile page that becomes the base for the semester project.</p></section>
+      <section class="slide slide--cover">
+        <p class="kicker">Week 2 - CS 0135</p>
+        <h1>HTML Foundations</h1>
+        <p class="lede">Structure a personal profile page with meaningful text, images, links, sections, and validation habits.</p>
+      </section>
 
+      <section class="slide">
+        <p class="kicker">Roadmap</p>
+        <h2>Today We Build Meaning</h2>
+        <ol class="agenda-list">
+          <li>Format text with semantic HTML.</li>
+          <li>Preview inline color and background styles.</li>
+          <li>Choose image paths that work.</li>
+          <li>Write accessible image markup.</li>
+          <li>Validate and debug a profile page.</li>
+          <li>Practice with a Week 2 lab.</li>
+        </ol>
+      </section>
 
-    <section class="slide"><h2>Learning Outcomes</h2><ul><li>Write a valid HTML document structure.</li><li>Use headings, paragraphs, emphasis, lists, links, images, tables, and forms correctly.</li><li>Choose semantic elements for page regions.</li><li>Validate HTML and fix common nesting errors.</li></ul></section>
+      <section class="slide">
+        <p class="kicker">Warm-up</p>
+        <h2>Prior-Knowledge Check</h2>
+        <div class="visual-grid three">
+          <div class="card accent"><h3>Page title</h3><p>Which visible heading should usually describe the whole page?</p></div>
+          <div class="card gold"><h3>Home file</h3><p>What file name does a web server commonly open first?</p></div>
+          <div class="card"><h3>Broken image</h3><p>What is one reason a browser may show a broken image icon?</p></div>
+        </div>
+        <details class="callout"><summary>Reveal sample answers</summary><p><code>h1</code>, <code>index.html</code>, and a missing or incorrect image path.</p></details>
+      </section>
 
-    <section class="slide"><h2>Prior-Knowledge Check</h2><ol><li>Which visible heading should usually describe the whole page?</li><li>What file name does a web server commonly open first?</li><li>What is one reason a browser may show a broken image icon?</li></ol><details class="callout"><summary>Reveal sample answers</summary><p><code>h1</code>, <code>index.html</code>, and a missing or incorrect image path.</p></details></section>
-
-
-    <section class="slide"><h2>HTML Document Structure</h2><pre><code>&lt;!DOCTYPE html&gt;
+      <section class="slide">
+        <p class="kicker">Starter structure</p>
+        <h2>Valid HTML Document</h2>
+        <div class="code-card">
+          <div class="code-label"><span>HTML</span><span>index.html</span></div>
+          <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
 &lt;head&gt;
   &lt;meta charset="UTF-8"&gt;
@@ -29,71 +56,388 @@
 &lt;/head&gt;
 &lt;body&gt;
 &lt;/body&gt;
-&lt;/html&gt;</code></pre></section>
+&lt;/html&gt;</code></pre>
+        </div>
+      </section>
 
-    <section class="slide"><h2>Code Walkthrough</h2><ul><li><code>lang="en"</code> identifies the page language.</li><li><code>charset="UTF-8"</code> supports common characters.</li><li><code>viewport</code> helps responsive layout on phones.</li><li><code>title</code> labels the browser tab.</li></ul></section>
+      <section class="slide">
+        <p class="kicker">Walkthrough</p>
+        <h2>What Each Part Does</h2>
+        <div class="visual-grid">
+          <div class="card accent"><h3><code>lang="en"</code></h3><p>Identifies the page language for browsers, search tools, and assistive technology.</p></div>
+          <div class="card"><h3><code>charset="UTF-8"</code></h3><p>Supports common characters and avoids strange text display problems.</p></div>
+          <div class="card gold"><h3><code>viewport</code></h3><p>Helps the page adapt to phones, tablets, and laptops.</p></div>
+          <div class="card"><h3><code>title</code></h3><p>Labels the browser tab and gives the page a document name.</p></div>
+        </div>
+      </section>
 
+      <section class="slide slide--section">
+        <p class="kicker">Part 1</p>
+        <h2>Text Formatting Is Also Meaning</h2>
+        <p class="lede">Many elements change appearance, but their real job is to describe the purpose of the text.</p>
+      </section>
 
-    <section class="slide"><h2>Headings and Paragraphs</h2><pre><code>&lt;h1&gt;Aisha Ahmed&lt;/h1&gt;
-&lt;p&gt;First-semester cybersecurity student learning web design.&lt;/p&gt;
-&lt;h2&gt;Learning Goals&lt;/h2&gt;
-&lt;p&gt;I want to build clear, secure, and accessible websites.&lt;/p&gt;</code></pre></section>
+      <section class="slide">
+        <p class="kicker">Formatting map</p>
+        <h2>Text Elements in Groups</h2>
+        <div class="visual-grid">
+          <div class="card accent"><h3>Importance and emphasis</h3><p><code>b</code>, <code>strong</code>, <code>i</code>, <code>em</code></p></div>
+          <div class="card gold"><h3>Highlight and annotation</h3><p><code>mark</code>, <code>small</code></p></div>
+          <div class="card"><h3>Document changes</h3><p><code>del</code>, <code>ins</code></p></div>
+          <div class="card"><h3>Science and math</h3><p><code>sub</code>, <code>sup</code></p></div>
+        </div>
+      </section>
 
+      <section class="slide">
+        <p class="kicker">Semantic choice</p>
+        <h2><code>&lt;b&gt;</code> Versus <code>&lt;strong&gt;</code></h2>
+        <div class="two-col">
+          <div class="card">
+            <h3><code>&lt;b&gt;</code></h3>
+            <p>Draws attention visually when the text is not more important.</p>
+            <p><code>&lt;b&gt;HTML&lt;/b&gt; term</code></p>
+          </div>
+          <div class="card accent">
+            <h3><code>&lt;strong&gt;</code></h3>
+            <p>Marks text with strong importance, warning, or urgency.</p>
+            <p><code>&lt;strong&gt;Important:&lt;/strong&gt;</code></p>
+          </div>
+        </div>
+        <p class="callout">They may both look bold, but they do not mean the same thing.</p>
+      </section>
 
-    <section class="slide"><h2>Strong and Emphasis</h2><div class="two-col"><div><pre><code>&lt;p&gt;Submit the project &lt;strong&gt;before Week 13&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Use &lt;em&gt;clear&lt;/em&gt; link text.&lt;/p&gt;</code></pre></div><ul><li><code>strong</code> marks importance.</li><li><code>em</code> marks stress emphasis.</li><li>They are not just bold and italic.</li></ul></div></section>
+      <section class="slide">
+        <p class="kicker">Semantic choice</p>
+        <h2><code>&lt;i&gt;</code> Versus <code>&lt;em&gt;</code></h2>
+        <div class="two-col">
+          <div class="card">
+            <h3><code>&lt;i&gt;</code></h3>
+            <p>Marks text set off from normal prose, such as a technical term or title.</p>
+            <p><code>&lt;i&gt;viewport&lt;/i&gt;</code></p>
+          </div>
+          <div class="card gold">
+            <h3><code>&lt;em&gt;</code></h3>
+            <p>Marks stress emphasis that can change how a sentence is understood.</p>
+            <p><code>This word is &lt;em&gt;emphasized&lt;/em&gt;.</code></p>
+          </div>
+        </div>
+        <p class="callout">They may both look italic, but <code>em</code> carries spoken emphasis.</p>
+      </section>
 
+      <section class="slide">
+        <p class="kicker">Code and result</p>
+        <h2>Formatting Elements Together</h2>
+        <div class="code-demo wide-left">
+          <div class="code-card">
+            <div class="code-label"><span>HTML</span><span>semantic formatting</span></div>
+            <pre><code>&lt;p&gt;&lt;strong&gt;Important:&lt;/strong&gt; Submit the project by Thursday.&lt;/p&gt;
+&lt;p&gt;This word is &lt;em&gt;emphasized&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Your current score is &lt;mark&gt;92%&lt;/mark&gt;.&lt;/p&gt;
+&lt;p&gt;The price changed from &lt;del&gt;$80&lt;/del&gt; to &lt;ins&gt;$60&lt;/ins&gt;.&lt;/p&gt;
+&lt;p&gt;Water is H&lt;sub&gt;2&lt;/sub&gt;O.&lt;/p&gt;
+&lt;p&gt;2&lt;sup&gt;3&lt;/sup&gt; = 8.&lt;/p&gt;</code></pre>
+          </div>
+          <div class="browser-preview">
+            <div class="browser-bar"></div>
+            <div class="browser-body">
+              <p><strong>Important:</strong> Submit the project by Thursday.</p>
+              <p>This word is <em>emphasized</em>.</p>
+              <p>Your current score is <mark>92%</mark>.</p>
+              <p>The price changed from <del>$80</del> to <ins>$60</ins>.</p>
+              <p>Water is H<sub>2</sub>O.</p>
+              <p>2<sup>3</sup> = 8.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <section class="slide"><h2>Lists</h2><div class="two-col"><pre><code>&lt;h2&gt;Skills&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;HTML structure&lt;/li&gt;
-  &lt;li&gt;Browser DevTools&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol&gt;
-  &lt;li&gt;Plan content&lt;/li&gt;
-  &lt;li&gt;Write HTML&lt;/li&gt;
-  &lt;li&gt;Validate&lt;/li&gt;
-&lt;/ol&gt;</code></pre><div class="browser-preview"><div class="browser-bar"></div><h3>Use lists for related items</h3><p>Choose ordered lists only when sequence matters.</p></div></div></section>
+      <section class="slide">
+        <p class="kicker">Predict</p>
+        <h2>What Will the Browser Show?</h2>
+        <div class="code-card">
+          <div class="code-label"><span>HTML</span><span>predict before reveal</span></div>
+          <pre><code>&lt;p&gt;The lab is &lt;strong&gt;required&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Try &lt;em&gt;one small change&lt;/em&gt; first.&lt;/p&gt;
+&lt;p&gt;Status: &lt;mark&gt;ready&lt;/mark&gt;&lt;/p&gt;</code></pre>
+        </div>
+        <details class="callout"><summary>Reveal answer</summary><p><strong>required</strong> appears important, <em>one small change</em> appears emphasized, and <mark>ready</mark> appears highlighted.</p></details>
+      </section>
 
-    <section class="slide"><h2>Predict the Output</h2><pre><code>&lt;ol&gt;
-  &lt;li&gt;Plan content&lt;/li&gt;
-  &lt;li&gt;Write HTML&lt;/li&gt;
-  &lt;li&gt;Validate&lt;/li&gt;
-&lt;/ol&gt;</code></pre><details class="callout"><summary>Reveal answer</summary><p>The browser displays a numbered list with three steps in order.</p></details></section>
+      <section class="slide slide--section">
+        <p class="kicker">Part 2</p>
+        <h2>A Small CSS Preview</h2>
+        <p class="lede">Today we only preview inline style. Week 3 teaches CSS properly.</p>
+      </section>
 
+      <section class="slide">
+        <p class="kicker">Inline style</p>
+        <h2>Color Belongs to CSS</h2>
+        <div class="code-demo">
+          <div class="code-card">
+            <div class="code-label"><span>HTML</span><span>CSS preview</span></div>
+            <pre><code>&lt;h1 style="background-color: powderblue;"&gt;
+  This is a heading
+&lt;/h1&gt;</code></pre>
+          </div>
+          <div class="browser-preview">
+            <div class="browser-bar"></div>
+            <div class="browser-body">
+              <h3 style="background-color: powderblue; color: #10231f; padding: .55rem;">This is a heading</h3>
+              <p><code>style</code> is an attribute. <code>background-color</code> is a CSS property. <code>powderblue</code> is the value.</p>
+            </div>
+          </div>
+        </div>
+        <p class="callout">This affects only this element. It is useful for a preview, but it is not the long-term way to style a site.</p>
+      </section>
 
-    <section class="slide"><h2>Links and Useful Link Text</h2><pre><code>&lt;a href=&quot;https://developer.mozilla.org/&quot;&gt;Read MDN Web Docs&lt;/a&gt;
-&lt;a href=&quot;projects.html&quot;&gt;View my projects&lt;/a&gt;</code></pre><p class="callout">Avoid link text like "click here." The text should explain the destination.</p></section>
+      <section class="slide">
+        <p class="kicker">Styled sections</p>
+        <h2>Valid HTML With Color Previews</h2>
+        <div class="code-demo wide-left">
+          <div class="code-card">
+            <div class="code-label"><span>HTML</span><span>named, rgb, and hex</span></div>
+            <pre><code>&lt;section style="background-color: aliceblue; padding: 16px;"&gt;
+  &lt;h2&gt;About Me&lt;/h2&gt;
+  &lt;p&gt;I am &lt;strong&gt;learning HTML&lt;/strong&gt; this semester.&lt;/p&gt;
+&lt;/section&gt;
 
+&lt;section style="background-color: rgb(232, 245, 241); padding: 16px;"&gt;
+  &lt;h2&gt;Learning Goal&lt;/h2&gt;
+  &lt;p&gt;Build pages that are &lt;em&gt;clear&lt;/em&gt; and accessible.&lt;/p&gt;
+&lt;/section&gt;
 
-    <section class="slide"><h2>Images and Alternative Text</h2><pre><code>&lt;img src=&quot;images/profile-workspace.svg&quot;
-     alt=&quot;Desk with a laptop, notebook, and web design sketches&quot;&gt;</code></pre><ul><li><code>src</code> points to the file.</li><li><code>alt</code> communicates the image purpose.</li><li>Decorative images may use empty alt text: <code>alt=""</code>.</li></ul></section>
+&lt;section style="background-color: #fff6dd; padding: 16px;"&gt;
+  &lt;h2&gt;Reminder&lt;/h2&gt;
+  &lt;p&gt;Use inline style today only as a preview.&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+          </div>
+          <div class="browser-preview">
+            <div class="browser-bar"></div>
+            <div class="browser-body">
+              <div style="background-color: aliceblue; padding: .7rem; border-radius: .4rem;"><strong>About Me</strong><p>I am <strong>learning HTML</strong> this semester.</p></div>
+              <div style="background-color: rgb(232, 245, 241); padding: .7rem; border-radius: .4rem;"><strong>Learning Goal</strong><p>Build pages that are <em>clear</em> and accessible.</p></div>
+              <div style="background-color: #fff6dd; padding: .7rem; border-radius: .4rem;"><strong>Reminder</strong><p>Inline style is only a preview.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
 
+      <section class="slide">
+        <p class="kicker">Mental model</p>
+        <h2>What the Style Attribute Contains</h2>
+        <div class="flow">
+          <div class="node dark">HTML element</div>
+          <div class="arrow">+</div>
+          <div class="node">style attribute</div>
+          <div class="arrow">=</div>
+          <div class="node gold">one local CSS rule</div>
+        </div>
+        <div class="visual-grid three">
+          <div class="card"><h3>Property</h3><p><code>background-color</code></p></div>
+          <div class="card"><h3>Value</h3><p><code>powderblue</code></p></div>
+          <div class="card"><h3>Separator</h3><p>End each declaration with <code>;</code></p></div>
+        </div>
+      </section>
 
-    <section class="slide"><h2>File Paths</h2><pre><code>profile-site/
+      <section class="slide slide--section">
+        <p class="kicker">Part 3</p>
+        <h2>Images Need Working Paths</h2>
+        <p class="lede">The browser can only display an image when <code>src</code> points to the right location.</p>
+      </section>
+
+      <section class="slide">
+        <p class="kicker">Absolute URL</p>
+        <h2>Full Web Address</h2>
+        <div class="code-demo">
+          <div class="code-card">
+            <div class="code-label"><span>HTML</span><span>absolute URL</span></div>
+            <pre><code>&lt;img
+  src="https://example.com/images/student.jpg"
+  alt="Student working on a laptop"
+&gt;</code></pre>
+          </div>
+          <div class="card gold">
+            <h3>What to remember</h3>
+            <ul>
+              <li>Starts with a complete web address.</li>
+              <li>Depends on another website staying available.</li>
+              <li>May involve copyright or permission issues.</li>
+              <li>Good for learning the idea, not for hotlinking random images.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <p class="kicker">Relative URL</p>
+        <h2>Project File Path</h2>
+        <div class="code-demo">
+          <div class="code-card">
+            <div class="code-label"><span>HTML</span><span>relative path</span></div>
+            <pre><code>&lt;img
+  src="images/student.jpg"
+  alt="Student working on a laptop"
+&gt;</code></pre>
+          </div>
+          <div class="diagram">
+            <pre><code>week02-project/
 |-- index.html
-|-- projects.html
 `-- images/
-    `-- profile-workspace.svg</code></pre><p><code>images/profile-workspace.svg</code> means: start beside <code>index.html</code>, open the <code>images</code> folder, then load the image.</p></section>
+    `-- student.jpg</code></pre>
+            <p><code>images/student.jpg</code> starts beside <code>index.html</code>, opens <code>images</code>, then loads <code>student.jpg</code>.</p>
+          </div>
+        </div>
+      </section>
 
+      <section class="slide">
+        <p class="kicker">Path detail</p>
+        <h2><code>images/</code> Versus <code>/images/</code></h2>
+        <div class="two-col">
+          <div class="card accent">
+            <h3><code>src="images/student.jpg"</code></h3>
+            <p>Start from the folder containing the current HTML file.</p>
+          </div>
+          <div class="card gold">
+            <h3><code>src="/images/student.jpg"</code></h3>
+            <p>Start from the website root. This can break when the site is inside a course folder.</p>
+          </div>
+        </div>
+        <p class="callout">For this lab, use the local relative path: <code>images/profile-workspace.svg</code>.</p>
+      </section>
 
-    <section class="slide"><h2>Semantic Page Structure</h2><pre><code>&lt;header&gt;...&lt;/header&gt;
+      <section class="slide">
+        <p class="kicker">Accessible images</p>
+        <h2>Image Markup Students Should Write</h2>
+        <div class="code-demo wide-left">
+          <div class="code-card">
+            <div class="code-label"><span>HTML</span><span>image with dimensions</span></div>
+            <pre><code>&lt;img
+  src="images/student.jpg"
+  alt="Student working on a laptop"
+  width="500"
+  height="600"
+&gt;</code></pre>
+          </div>
+          <div class="visual-grid">
+            <div class="card"><h3><code>src</code></h3><p>Where the image file is.</p></div>
+            <div class="card"><h3><code>alt</code></h3><p>What the image communicates.</p></div>
+            <div class="card"><h3><code>width</code></h3><p>Display width and reserved space.</p></div>
+            <div class="card"><h3><code>height</code></h3><p>Display height and reserved space.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <p class="kicker">Image quality</p>
+        <h2>Avoid Distortion and Vague Alt Text</h2>
+        <div class="two-col">
+          <div class="mistake-card">
+            <h3>Weak</h3>
+            <pre><code>&lt;img src="student.jpg" alt="image"
+     width="500" height="100"&gt;</code></pre>
+            <p>Path may be wrong, alt text is vague, and dimensions can squash the image.</p>
+          </div>
+          <div class="turn-card">
+            <h3>Better</h3>
+            <pre><code>&lt;img src="images/student.jpg"
+     alt="Student working on a laptop"
+     width="500" height="600"&gt;</code></pre>
+            <p>Path is specific, alt text has purpose, and dimensions match the image shape.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <p class="kicker">Debugging</p>
+        <h2>Common Image Mistakes</h2>
+        <div class="step-list">
+          <div class="step"><h3>Folder name</h3><p><code>image</code> and <code>images</code> are different paths.</p></div>
+          <div class="step"><h3>File name</h3><p>Check spelling, spaces, and extension.</p></div>
+          <div class="step"><h3>Wrong start</h3><p>Do not include the whole project folder beside <code>index.html</code>.</p></div>
+          <div class="step"><h3>Missing alt</h3><p>Every meaningful image needs useful alt text.</p></div>
+        </div>
+      </section>
+
+      <section class="slide slide--section">
+        <p class="kicker">Part 4</p>
+        <h2>Build the Profile Page</h2>
+        <p class="lede">Now combine structure, semantic text, images, paths, and a small style preview.</p>
+      </section>
+
+      <section class="slide">
+        <p class="kicker">Semantic structure</p>
+        <h2>Page Regions</h2>
+        <div class="code-demo">
+          <div class="code-card">
+            <div class="code-label"><span>HTML</span><span>semantic regions</span></div>
+            <pre><code>&lt;header&gt;...&lt;/header&gt;
 &lt;nav&gt;...&lt;/nav&gt;
 &lt;main&gt;
   &lt;section&gt;...&lt;/section&gt;
   &lt;article&gt;...&lt;/article&gt;
 &lt;/main&gt;
-&lt;footer&gt;...&lt;/footer&gt;</code></pre></section>
+&lt;footer&gt;...&lt;/footer&gt;</code></pre>
+          </div>
+          <div class="diagram">
+            <div class="flow">
+              <div class="node">header</div>
+              <div class="node">nav</div>
+              <div class="node dark">main</div>
+              <div class="node gold">footer</div>
+            </div>
+            <p>Semantic regions help humans and tools understand the parts of the page.</p>
+          </div>
+        </div>
+      </section>
 
+      <section class="slide">
+        <p class="kicker">Links and lists</p>
+        <h2>Use Elements for Their Jobs</h2>
+        <div class="code-demo wide-left">
+          <div class="code-card">
+            <div class="code-label"><span>HTML</span><span>navigation and list</span></div>
+            <pre><code>&lt;nav&gt;
+  &lt;a href="#about"&gt;About&lt;/a&gt;
+  &lt;a href="#goals"&gt;Goals&lt;/a&gt;
+  &lt;a href="#contact"&gt;Contact&lt;/a&gt;
+&lt;/nav&gt;
 
-    <section class="slide"><h2>Tables Are for Tabular Data</h2><pre><code>&lt;table&gt;
+&lt;ul&gt;
+  &lt;li&gt;Write valid HTML&lt;/li&gt;
+  &lt;li&gt;Use meaningful images&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          </div>
+          <div class="browser-preview">
+            <div class="browser-bar"></div>
+            <div class="browser-body">
+              <p><strong>Good link text</strong> tells the destination.</p>
+              <p>A list groups related items. An ordered list is for steps or rank.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <p class="kicker">Tables</p>
+        <h2>Use Tables for Tabular Data</h2>
+        <div class="code-card">
+          <div class="code-label"><span>HTML</span><span>study plan table</span></div>
+          <pre><code>&lt;table&gt;
   &lt;caption&gt;Weekly Study Plan&lt;/caption&gt;
   &lt;tr&gt;&lt;th&gt;Day&lt;/th&gt;&lt;th&gt;Task&lt;/th&gt;&lt;/tr&gt;
   &lt;tr&gt;&lt;td&gt;Monday&lt;/td&gt;&lt;td&gt;Read HTML notes&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;</code></pre><p>Do not use tables only to arrange page layout.</p></section>
+&lt;/table&gt;</code></pre>
+        </div>
+        <p class="callout">Do not use tables only to arrange page layout.</p>
+      </section>
 
-
-    <section class="slide"><h2>Introductory Forms</h2><pre><code>&lt;form&gt;
+      <section class="slide">
+        <p class="kicker">Forms</p>
+        <h2>Labels Make Inputs Usable</h2>
+        <div class="code-demo">
+          <div class="code-card">
+            <div class="code-label"><span>HTML</span><span>introductory form</span></div>
+            <pre><code>&lt;form&gt;
   &lt;label for="message"&gt;Message&lt;/label&gt;
   &lt;textarea id="message" name="message"&gt;&lt;/textarea&gt;
 
@@ -101,46 +445,77 @@
   &lt;input id="email" name="email" type="email"&gt;
 
   &lt;button type="submit"&gt;Send&lt;/button&gt;
-&lt;/form&gt;</code></pre></section>
+&lt;/form&gt;</code></pre>
+          </div>
+          <div class="turn-card">
+            <h3>Check the pair</h3>
+            <p><code>label for="email"</code> must match <code>input id="email"</code>.</p>
+          </div>
+        </div>
+      </section>
 
-
-    <section class="slide"><h2>HTML Comments</h2><pre><code>&lt;!-- Main profile content starts here --&gt;</code></pre><p>Use comments to clarify structure during learning. Do not use comments to hide private information.</p></section>
-
-
-    <section class="slide"><h2>HTML vs XHTML Context</h2><ul><li>XHTML used XML-style strict syntax.</li><li>Modern courses should teach HTML as the main standard.</li><li>Writing lowercase tags, quoted attributes, and well-nested elements is still a good habit.</li></ul></section>
-
-
-    <section class="slide"><h2>Find the Error</h2><pre><code>&lt;ul&gt;
+      <section class="slide">
+        <p class="kicker">Validation</p>
+        <h2>Find the Error</h2>
+        <div class="code-card">
+          <div class="code-label"><span>HTML</span><span>debug challenge</span></div>
+          <pre><code>&lt;ul&gt;
   &lt;li&gt;HTML
   &lt;li&gt;CSS&lt;/li&gt;
-&lt;/ol&gt;</code></pre><p class="callout">Find three problems before the answer is shown.</p><details class="callout"><summary>Reveal answer</summary><p>Close the first <code>li</code>, keep list tags consistent, and close the unordered list with <code>&lt;/ul&gt;</code>.</p></details></section>
+&lt;/ol&gt;</code></pre>
+        </div>
+        <p class="callout">Find three problems before the answer is shown.</p>
+        <details class="callout"><summary>Reveal answer</summary><p>Close the first <code>li</code>, keep list tags consistent, and close the unordered list with <code>&lt;/ul&gt;</code>.</p></details>
+      </section>
 
+      <section class="slide">
+        <p class="kicker">Your turn</p>
+        <h2>Short Practice Task</h2>
+        <div class="turn-card">
+          <ol>
+            <li>Add four formatting elements to your profile content.</li>
+            <li>Add one inline style example and label it as a CSS preview.</li>
+            <li>Use <code>images/profile-workspace.svg</code> with useful alt text.</li>
+            <li>Set sensible image dimensions without distortion.</li>
+            <li>Validate and fix one issue before submission.</li>
+          </ol>
+        </div>
+      </section>
 
-    <section class="slide"><h2>Live-Coding Checkpoint</h2><ol><li>Create semantic regions.</li><li>Add profile introduction and goals.</li><li>Add a projects list and study table.</li><li>Add a contact form with labels.</li><li>Validate the page.</li></ol></section>
+      <section class="slide">
+        <p class="kicker">Knowledge check</p>
+        <h2>Exit Questions</h2>
+        <div class="visual-grid">
+          <div class="card"><h3>Semantics</h3><p>When is <code>strong</code> better than <code>b</code>?</p></div>
+          <div class="card"><h3>Images</h3><p>Why might <code>/images/student.jpg</code> fail in a course folder?</p></div>
+          <div class="card"><h3>Accessibility</h3><p>What makes alt text useful?</p></div>
+          <div class="card"><h3>CSS preview</h3><p>Why will we move style rules out of HTML later?</p></div>
+        </div>
+      </section>
 
+      <section class="slide">
+        <p class="kicker">Recap</p>
+        <h2>What Week 2 Adds</h2>
+        <div class="visual-grid three">
+          <div class="card accent"><h3>Meaning</h3><p>Semantic HTML describes structure and intent.</p></div>
+          <div class="card gold"><h3>Paths</h3><p>Relative image paths depend on the current file location.</p></div>
+          <div class="card"><h3>Access</h3><p>Useful alt text and labels make pages easier to use.</p></div>
+        </div>
+        <p class="callout">Exit ticket: paste one fixed validation error and explain the fix.</p>
+      </section>
 
-    <section class="slide"><h2>Your Turn</h2><p>Build your profile page using the starter folder.</p><ul><li>Replace placeholder text with your own content.</li><li>Add one internal link and one external link.</li><li>Write useful alt text for the provided image.</li><li>Fix validation errors before submission.</li></ul></section>
-
-
-    <section class="slide"><h2>Knowledge Check</h2><ol><li>What is the purpose of <code>&lt;main&gt;</code>?</li><li>When should you use a table?</li><li>Why should an input have a label?</li><li>What does the HTML validator help you find?</li></ol></section>
-
-    <section class="slide"><h2>Common Mistakes</h2><ul><li>Using headings only to make text look large.</li><li>Writing vague alt text such as "image" or "picture."</li><li>Using tables for page layout instead of data.</li><li>Forgetting that <code>id</code> values and fragment links must match.</li></ul></section>
-
-
-    <section class="slide"><h2>Recap and Exit Ticket</h2><ul><li>HTML describes structure and meaning.</li><li>Semantic elements make pages clearer for humans and tools.</li><li>Validation catches mistakes early.</li></ul><p class="callout">Exit ticket: paste one fixed validation error and explain the fix.</p></section>
-
-            </div>
-            <div class="controls" aria-label="Slide controls">
-              <a class="home-link" href="../../../index.html">Course Home</a>
-              <div class="slide-status">
-                <div>Week 2 - <span data-current-slide>1</span>/<span data-total-slides></span></div>
-                <div class="progress-track" aria-hidden="true"><span data-progress-bar></span></div>
-              </div>
-              <div class="control-buttons">
-                <button type="button" data-prev aria-label="Previous slide">Prev</button>
-                <button type="button" data-next aria-label="Next slide">Next</button>
-              </div>
-            </div>
-          </main>
-        </body>
-        </html>
+    </div>
+    <div class="controls" aria-label="Slide controls">
+      <a class="home-link" href="../../../index.html">Course Home</a>
+      <div class="slide-status">
+        <div>Week 2 - <span data-current-slide>1</span>/<span data-total-slides></span></div>
+        <div class="progress-track" aria-hidden="true"><span data-progress-bar></span></div>
+      </div>
+      <div class="control-buttons">
+        <button type="button" data-prev aria-label="Previous slide">Prev</button>
+        <button type="button" data-next aria-label="Next slide">Next</button>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

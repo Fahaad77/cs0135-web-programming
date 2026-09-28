@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Week 5 Activity</title>
+  <link rel="stylesheet" href="../../../assets/css/site.css">
+</head>
+<body>
+  <main class="page-shell">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="../../../index.html">Course Home</a>
+      <span>/</span>
+      <a href="../index.html">Week 5</a>
+      <span>/</span>
+      <span>Activity</span>
+    </nav>
+    <p class="eyebrow">Week 5 Activity</p>
+    <h1 class="page-title">XML and JSON Data Clinic</h1>
+    <p class="lede">Find syntax errors, choose data modeling options, and convert a record between XML and JSON.</p>
+    <div class="control-panel">
+      <a class="button" href="../index.html">Return to Week</a>
+      <a class="button" href="../../../index.html">Return to Course Home</a>
+    </div>
+    <section class="instruction-section">
+      <h2>Part 1: Find Five XML Errors</h2>
+      <pre><code>&lt;catalog&gt;
+  &lt;item id=p1&gt;
+    &lt;name&gt;USB Cable&lt;/title&gt;
+    &lt;price&gt;25&lt;/price&gt;
+  &lt;item&gt;
+&lt;/products&gt;</code></pre><details><summary>Self-check</summary><p>Unquoted attribute, mismatched <code>name/title</code>, missing close for first item, second item closes incorrectly, and root closes as <code>products</code>.</p></details>
+    </section><section class="instruction-section">
+      <h2>Part 2: Element or Attribute?</h2>
+      <p>Choose where to store product ID, product name, long description, and category.</p><details><summary>Self-check</summary><p>ID and category can be attributes; name and long description are better as elements.</p></details>
+    </section><section class="instruction-section">
+      <h2>Part 3: Namespace Collision</h2>
+      <p>Two vocabularies both use <code>title</code>. Propose prefixes.</p><details><summary>Self-check</summary><p>For example, <code>web:title</code> and <code>book:title</code> with two namespace declarations.</p></details>
+    </section><section class="instruction-section">
+      <h2>Part 4: Identify Invalid JSON</h2>
+      <pre><code>{
+  name: &quot;USB Cable&quot;,
+  &quot;price&quot;: 25,
+}</code></pre><details><summary>Self-check</summary><p>The key <code>name</code> needs double quotes, and the trailing comma after 25 must be removed.</p></details>
+    </section><section class="instruction-section">
+      <h2>Part 5: Convert XML to JSON</h2>
+      <pre><code>&lt;course id=&quot;CS0135&quot;&gt;
+  &lt;title&gt;Web Programming&lt;/title&gt;
+  &lt;hours&gt;3&lt;/hours&gt;
+&lt;/course&gt;</code></pre><details><summary>Self-check</summary><pre><code>{
+  &quot;id&quot;: &quot;CS0135&quot;,
+  &quot;title&quot;: &quot;Web Programming&quot;,
+  &quot;hours&quot;: 3
+}</code></pre></details>
+    </section><section class="instruction-section">
+      <h2>Part 6: Choose a Format</h2>
+      <ol><li>Modern AJAX API.</li><li>Office document package.</li><li>Enterprise SOAP integration.</li></ol><details><summary>Self-check</summary><p>JSON, XML, and XML respectively are reasonable choices.</p></details>
+    </section>
+  </main>
+</body>
+</html>

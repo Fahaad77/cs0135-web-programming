@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Week 4 Activity</title>
+  <link rel="stylesheet" href="../../../assets/css/site.css">
+</head>
+<body>
+  <main class="page-shell">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="../../../index.html">Course Home</a>
+      <span>/</span>
+      <a href="../index.html">Week 4</a>
+      <span>/</span>
+      <span>Activity</span>
+    </nav>
+    <p class="eyebrow">Week 4 Activity</p>
+    <h1 class="page-title">Box Model and Flexbox Clinic</h1>
+    <p class="lede">Practice layout reasoning before building a responsive project homepage.</p>
+    <div class="control-panel">
+      <a class="button" href="../index.html">Return to Week</a>
+      <a class="button" href="../../../index.html">Return to Course Home</a>
+    </div>
+    <section class="instruction-section">
+      <h2>Part 1: Label the Box Model</h2>
+      <p class='student-task'>Label content, padding, border, and margin on a sketch of a card.</p><details><summary>Self-check</summary><p>Content is the text/image area; padding is inside the border; border surrounds padding; margin is outside the border.</p></details>
+    </section><section class="instruction-section">
+      <h2>Part 2: Calculate Width</h2>
+      <pre><code>.box { width: 300px; padding: 20px; border: 5px solid #000; }</code></pre><p>With default content-box, what is the total rendered width?</p><details><summary>Self-check</summary><p>350px: 300 + 20 + 20 + 5 + 5.</p></details>
+    </section><section class="instruction-section">
+      <h2>Part 3: Border-box Difference</h2>
+      <p>How does <code>box-sizing: border-box</code> change the previous answer?</p><details><summary>Self-check</summary><p>The total width stays 300px; content space shrinks to make room for padding and border.</p></details>
+    </section><section class="instruction-section">
+      <h2>Part 4: Predict Flexbox</h2>
+      <pre><code>.cards { display: flex; flex-wrap: wrap; gap: 1rem; }
+.card { flex: 1 1 250px; }</code></pre><details><summary>Self-check</summary><p>Cards sit in a row when space allows and wrap to new lines when space is tight.</p></details>
+    </section><section class="instruction-section">
+      <h2>Part 5: Fix Missing Wrap</h2>
+      <p class='student-task'>A card row overflows on phones. Which Flexbox property is probably missing?</p><details><summary>Self-check</summary><p><code>flex-wrap: wrap;</code></p></details>
+    </section><section class="instruction-section">
+      <h2>Part 6: Margin or Padding?</h2>
+      <ol><li>Space inside a card around text.</li><li>Space between two cards.</li></ol><details><summary>Self-check</summary><p>Use padding inside the card and margin/gap between cards.</p></details>
+    </section><section class="instruction-section">
+      <h2>Part 7: Breakpoint</h2>
+      <p>What does <code>@media (max-width: 700px)</code> mean?</p><details><summary>Self-check</summary><p>Apply the enclosed rules when the viewport is 700px wide or narrower.</p></details>
+    </section><section class="instruction-section">
+      <h2>Part 8: Replace Float</h2>
+      <p class='student-task'>A whole page layout uses floated columns. Rewrite the layout idea using a flex container and flexible cards.</p><details><summary>Self-check</summary><p>Use <code>display:flex</code>, <code>gap</code>, <code>flex-wrap:wrap</code>, and flexible item sizes.</p></details>
+    </section>
+  </main>
+</body>
+</html>

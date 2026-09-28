@@ -1,0 +1,11 @@
+{
+  "items": [
+    {
+      "id": "item-1",
+      "name": "Example Item",
+      "category": "starter",
+      "description": "Replace this record with your own data.",
+      "available": true
+    }
+  ]
+}
