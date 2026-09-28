@@ -1,5 +1,5 @@
 async function loadCourse() {
-  const response = await fetch('config/course.json');
+  const response = await fetch('config/course.json?v=2026-09-28-week03-05', { cache: 'no-store' });
   if (!response.ok) throw new Error('Unable to load course configuration');
   return response.json();
 }
